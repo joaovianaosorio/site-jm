@@ -3,12 +3,25 @@
 * {
     padding: 0px;
     margin: 0px;
-    box-sizing: 0px;
+}
+
+:root { 
+    --cor0: #232126;
+    --cor1: #FFFF7D;
+    --cor2: #FFE24F;
+    --cor3: #F2CF1D;
+    --cor4: #F2C029;
+    --cor5: #F2AE2E;
+    --cor6: #F2F2F2;
+    --cor7: #D6D6D6;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', sans-serif;  
 }
 
 body, html{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(255, 255, 125);
+    background-color: #ffff7d;
 }
 
 header{
@@ -33,19 +46,37 @@ nav{
     background-color: rgba(0, 0, 0, 0.801);
     height: 2.87em;
     position: absolute;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
 nav > a{
+    color: #D6D6D6;
     border: 1px solid none;
     border-bottom: none;
     border-right: 1px solid rgb(145, 144, 144);
     padding-right: 5px;
     background-color: rgba(0, 0, 0, 0.801);
-    margin: auto;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: var(--cor2);
+}
+
+nav > div.protese > a{
+    text-decoration: none;
+    color: var(--cor2);
+}
+
+nav > div.protese:hover > ul{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.801);
+    color: white;
+}
+
+div.protese > ul{
+    display: none;
 }
 
 nav > a#ultimo{
