@@ -5,33 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/9ee7458646.js" crossorigin="anonymous"></script>
     <title>JM Soluções Protéticas</title>
 </head>
 <body>
     <header>
         <img src="imagens/logo-vetorizada.png" alt="Logo JM" id="logo">
+        <nav>
+            <div class="menu" id="menu">
+                <a href="index.html">Home</a>
+                <div class="protese">
+                    <a href="#">Próteses</a>
+                    <ul>
+                        <li>Orto</li>
+                        <li>Implante</li>
+                        <li>Flex</li>
+                        <li>PPR</li>
+                    </ul>
+                </div>
+                <a href="#">Fale Conosco</a>
+                <a href="#" id="ultimo">Quem Somos? </a>
+            </div>
+            <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        </nav>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <div class="protese">
-            <a href="#">Próteses</a>
-            <ul>
-                <li>Orto</li>
-                <li>Implante</li>
-                <li>Flex</li>
-                <li>PPR</li>
-            </ul>
-        </div>
-        <a href="#">Fale Conosco</a>
-        <a href="#" id="ultimo">Quem Somos? </a>
-    </nav>
     <main>
-        <article>
-
-        </article>
+        <section class="home" id="home">
+            <div class="apresentacao">
+                <h1>Laboratório de <span class="destaque">Prótese Dentária</span></h1>
+                <p>Próteses odontológicas de alta performance desenvolvidas sob medida para dentistas que não abrem mão da excelência estética e da qualidade de vida.</p>
+                <div class="cta">
+                    <p class="proteses">Próteses</p>
+                    <a href="https://wa.me/message/56S2XLPK5G65A1" target="_blank">
+                        <p class="contato"><span class="ctt">Contato</span><i class="fa-brands fa-whatsapp" id="icone"></i></p>
+                    </a>
+                </div>
+            </div> 
+        </section>
     </main>
     <footer>
-        <p>Site criado por <a href="https://github.com/joaovianaosorio" target="_blank">João Osório</a></p>
     </footer>
 </body>
 </html>

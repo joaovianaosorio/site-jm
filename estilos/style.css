@@ -1,12 +1,14 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sriracha&display=swap');
 
 * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 :root { 
-    --cor0: #232126;
+    --cor0: #171717;
     --cor1: #FFFF7D;
     --cor2: #FFE24F;
     --cor3: #F2CF1D;
@@ -14,42 +16,46 @@
     --cor5: #F2AE2E;
     --cor6: #F2F2F2;
     --cor7: #D6D6D6;
+    --cor8: #3b3b3bfd;
 
     --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
-    --fonte-destaque: 'Bebas Neue', sans-serif;  
+    --fonte-destaque: 'Inter', sans-serif;  
 }
 
 body, html{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffff7d;
+    background-color: var(--cor0);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 header{
     /*background-color: rgba(0, 0, 0, 0.801);*/
-    display: inline;
-    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding-top: .8em;
+    padding-right: .5em;
+    padding-left: .5em;
+    border-bottom: 1px solid var(--cor8);
 }
 
-img#logo{
-  width: 60px;
-  height: 17x;
-  padding-top: 2%;
-  /*padding-left: ;*/
-  padding-bottom: 2%;
-  display: inline;
-  background-color: rgba(0, 0, 0, 0.801);
+header > img#logo{   
+  height: 35px;
+  width: auto;
+  background-color: var(--cor0);
+  align-self: flex-start;
 }
 
 nav{
     border: none;
-    display: inline;
-    background-color: rgba(0, 0, 0, 0.801);
-    height: 2.87em;
-    position: absolute;
     text-align: center;
+    align-self: flex-start;
 }
 
-nav > a{
+/*nav > a{
     color: #D6D6D6;
     border: 1px solid none;
     border-bottom: none;
@@ -58,9 +64,18 @@ nav > a{
     background-color: rgba(0, 0, 0, 0.801);
     text-align: center;
     text-decoration: none;
+}*/
+
+nav > .material-symbols-outlined{
+    color: var(--cor6);
+    font-size: 2.5em;
 }
 
-nav a:hover{
+nav > .menu{
+    display: none;
+}
+
+/*nav a:hover{
     color: var(--cor2);
 }
 
@@ -81,7 +96,82 @@ div.protese > ul{
 
 nav > a#ultimo{
     border-right: none;
+}*/
+
+.home{
+    height: 30em;
+    padding-top: 3.5em;
+    background-image: url('../imagens/fundo-home.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+.home > .apresentacao{
+    background-color: #1717178a;
+    text-align: center;
+}
+
+.home > .apresentacao > h1{
+    color: var(--cor6);
+    font-size: 2.5em;
+    font-family: var(--fonte-padrao);
+}
+
+.home > .apresentacao > h1 > .destaque{
+    color: var(--cor3);
+    display: inline-block;
+}
+
+.home > .apresentacao > p{
+    display: block;
+    color: var(--cor6);
+    margin: auto;
+    padding-top: 1.3em;
+    width: 20em;
+}
+
+.home .cta{
+    display: flex;
+    margin: auto;
+    flex-flow: row wrap;
+} 
+
+.home .cta > p{
+    text-align: center;
+}
+
+.home .cta > .proteses{
+    color: var(--cor2);
+    border: 1px solid var(--cor2);
+    border-radius: 10px;
+    padding-top: .6em;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: 1em;
+    width: 10em;
+    height: 2.5em;
+}
+
+.home > .apresentacao > .cta > a{
+    margin-right: auto;
+}
+
+.home > .apresentacao > .cta > a > .contato{
+    color: var(--cor0);
+    background-color: var(--cor2);
+    border-radius: 10px;
+    padding-top: .7em;
+    margin-top: 2em;
+    width: 10em;
+    height: 2.5em;
+}
+
+.home > .apresentacao > .cta > a > .contato
+ .ctt{
+    padding-right: .3em;
+}
+
 
 footer{
     background-color: white;
