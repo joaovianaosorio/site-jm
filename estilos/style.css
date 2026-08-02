@@ -13,10 +13,11 @@
     --cor2: #FFE24F;
     --cor3: #F2CF1D;
     --cor4: #F2C029;
-    --cor5: #F2AE2E;
+    --cor5: #CFA526;
     --cor6: #F2F2F2;
     --cor7: #D6D6D6;
-    --cor8: #3b3b3bfd;
+    --cor-transparente: #3b3b3bfd;
+    --cor9: #171717;
 
     --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
     --fonte-destaque: 'Inter', sans-serif;  
@@ -66,50 +67,76 @@ nav > .menu{
 
 .home{
     display: flex;
-    flex-flow: column wrap;
-    background-image: url('../imagens/fundo-home.png');
-    background-size: cover;
+    flex-flow: row nowrap;
     margin-top: 5em;
 }
 
-.home > .titulo{
+.home > .texto > .titulo{
     text-align: left;
     width: 53vw;
+    margin-top: 1.4em;
     margin-left: .8em;
 }
 
-.home > .titulo > h1 > .destaque{
+.home > .texto > .titulo > h1 > .destaque{
     color: var(--cor4);
 }
 
-.home > .subtitulo{
+.home > .texto > .subtitulo{
     text-align: left;
     width: 53vw;
     font-size: 1.3em;
-    margin-top: 2em;
+    margin-top: 1.4em;
     margin-left: .8em;
 }
 
-.home > .cta{
-    background-color: var(--cor4);
+.home > .texto > .cta > a{
+    display: block;
+    color: var(--cor6);
+    text-decoration: none;
+    background-color: var(--cor5);
     text-align: center;
     font-weight: bold;
     padding-top: .7em;
     padding-bottom: .7em;
-    margin-top: 2em;
+    margin-top: 2.2em;
     margin-left: .8em;
-    border: 0px solid var(--cor4);
+    border: 0px solid var(--cor5);
     border-radius: 35px;
     width: 53vw;
 }
-
-.home > .cta > p > a{
-    color: var(--cor6);
-    text-decoration: none;
+.home > .texto > .cta > a > .fa-whatsapp{
+    font-size: 1.2em;
 }
 
-.home > .cta > p > a:visited{
+.home > .texto >.cta > a:visited{
     text-decoration: none;
+    color: var(--cor6);
+    text-decoration: none;
+    background-color: var(--cor5);
+}
+
+.metricas{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--cor4);
+    color: var(--cor6);
+    width: 100vw;
+    height: 5em;
+    margin-top: 5em;
+}
+
+.metricas > .casos, .tempo{
+    width: 50vw;
+}
+
+.metricas > .linha{
+    height: 13vw;
+    width: .1em;
+    background-color: var(--cor6);
 }
 
 footer{
