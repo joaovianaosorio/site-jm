@@ -41,6 +41,7 @@ header{
     padding-right: .5em;
     padding-left: .5em;
     box-shadow: 1px 1px 1px #3b3b3b41;
+    border-bottom: 1px solid #3b3b3b82;
 }
 
 header > img#logo{   
@@ -115,7 +116,7 @@ nav > .menu{
     border: 0px solid var(--cor5);
     border-radius: 35px;
     width: 53vw;
-    box-shadow: 2px 2px 2px  #3b3b3b82;
+    box-shadow: 2px 2px 2px #3b3b3b82;
 }
 .home > .texto > .cta > a > .fa-whatsapp{
     font-size: 1.2em;
@@ -196,7 +197,8 @@ section#cards{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    padding-top: 3em;
+    padding: 3em 0em;
+    border-bottom: 1px solid #3b3b3b82;
 }
 
 .cards > .cards-topo, .cards-baixo{
@@ -380,15 +382,33 @@ section#cards{
 
 article#nos{
     background-color: var(--cor6);
+    background-image: url('../imagens/fundo-nos.png');
+    background-position: -.5em;
     padding-top: 3em;
     text-align: center;
 }
 
 .nos > h1{
+    background-color: var(--cor6);
+    width: 60vw;
+    margin: auto;
     font-family: var(--fonte-destaque);
-    color: var(--cor5);
+    color: var(--cor9);
     font-size: 1.6em;
+    border-radius: 10px;
 }
+
+.nos > h1 > .somos{
+    color: var(--cor5);
+}
+
+/*.nos > h1 > .somos{
+    color: transparent; 
+    -webkit-text-stroke: 1px var(--cor5);
+    text-stroke: 1px var(--cor5);
+    color: var(--cor6);
+    font-size: 1em;
+}*/
 
 .nos > .quem-somos{
     display: flex;
@@ -404,7 +424,8 @@ article#nos{
     width: auto;
 }
 
-.nos > .quem-somos > p{
+.nos > .quem-somos> .texto-nos{
+    background-color: var(--cor6);
     font-weight: bold;
     text-align: justify;
     width: 90%;
@@ -412,22 +433,105 @@ article#nos{
     border-radius: 10px;
     margin-top: 1.5em;
     padding: .6em;
-    color: var(--cor4);
+    color: var(--cor9);
+}
+
+.nos > .quem-somos > .texto-nos > h2{
+    color: var(--cor5);
+    font-size: 1.2em;
+    padding-top: .3em;
+    margin-bottom: 1em;
+}
+
+.nos > .quem-somos > .texto-nos > h2 > .slogan{
+    color: var(--cor9);
+}
+
+.nos > .quem-somos > .texto-nos > p{
+    font-weight: normal;
 }
 
 .servicos{
     background-color: var(--cor-fundo);
     padding-top: 3em;
-    text-align: center;
 }
 
 .servicos > h1{
     font-family: var(--fonte-destaque);
     font-size: 1.6em;
+    text-align: center;
 }
 
 .servicos > h1 > .destaque-pt{
    color: var(--cor4);
+}
+
+.servicos > .carrossel-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   2. CARROSSEL (Rolagem no Touch)
+   ========================================== */
+.trabalhos-carrossel {
+  display: flex;
+  gap: 16px;    /* Espaço entre os cards */
+  overflow-x: auto; /* Permite a rolagem horizontal */
+  scroll-snap-type: x mandatory; /* Força o card a "travar" na tela */
+  scroll-behavior: smooth;
+  padding: 10px 20px 25px 20px; /* Padding lateral garante a margem inicial */
+  
+  /* Esconde a barra de rolagem no navegador (opcional) */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Esconde a barra de rolagem no Chrome/Safari */
+.trabalhos-carrossel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* ==========================================
+   3. CARDS DE TRABALHO
+   ========================================== */
+.trabalho-card {
+/* O segredo: 80% da largura da tela faz o próximo card aparecer 'espiando' na direita */
+  flex: 0 0 80vw; /* Card espião no mobile */
+  scroll-snap-align: center;    /* Centraliza o card ativo ao parar de arrastar */
+  
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.trabalho-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;    /* Mantém a proporção da foto sem distorcer */
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.trabalho-card h2 {
+  font-size: 1.2rem;
+  color: var(--cor9);
+  margin-bottom: 8px;
+}
+
+.trabalho-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.servicos > .carrossel-wrapper > .btn-carrossel{
+    display: none;
 }
 
 footer{

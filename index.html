@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/9ee7458646.js" crossorigin="anonymous"></script>
+    <script src="script/script.js" defer></script>
     <title>JM Soluções Protéticas</title>
 </head>
 <body>
@@ -83,14 +85,71 @@
             </div>
         </section>
         <article id="nos" class="nos">
-            <h1>QUEM SOMOS?</h1>
+            <h1>QUEM <span class="somos">SOMOS?</span></h1>
             <div class="quem-somos">
                 <img src="imagens/protetico.jpg" alt="quem-somos">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, fuga quos dignissimos sit sint optio totam eum, vero error officiis accusantium qui tempora libero culpa esse beatae porro ipsa aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid vero ullam obcaecati et adipisci expedita nulla autem voluptas ipsum repellat illum, at fugit culpa quaerat, neque officiis cumque! Impedit, maxime! Lorem ipsum, dolor sit amet consectetur adipisicing elit. A vel illum nam neque ut expedita, blanditiis nulla impedit reprehenderit consequuntur veritatis consectetur libero adipisci aperiam ab quo numquam ex deleniti!</p>
+                <div class="texto-nos">
+                    <h2>JM Soluções Protéticas, <span class="slogan">o sorriso dos seus pacientes é aqui!</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, fuga quos dignissimos sit sint optio totam eum, vero error officiis accusantium qui tempora libero culpa esse beatae porro ipsa aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid vero ullam obcaecati et adipisci expedita nulla autem voluptas ipsum repellat illum, at fugit culpa quaerat, neque officiis cumque! Impedit, maxime! Lorem ipsum, dolor sit amet consectetur adipisicing elit. A vel illum nam neque ut expedita, blanditiis nulla impedit reprehenderit consequuntur veritatis consectetur libero adipisci aperiam ab quo numquam ex deleniti!</p>
+                </div>
             </div>
         </article>
         <section id="servicos" class="servicos">
             <h1>NOSSAS <span class="destaque-pt">PRÓTESES!</span></h1>
+            <div class="carrossel-wrapper">
+                <!-- Botão Esquerdo -->
+                <button class="btn-carrossel prev" id="btn-prev" aria-label="Anterior">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                </button>
+
+                <!-- O Container dos Cards -->
+                <div class="trabalhos-carrossel" id="carrossel">
+                <!-- Card 1 -->
+                    <div class="trabalho-card">
+                        <img src="protese-1.jpg" alt="Protocolo sobre Implante">
+                        <h2>Protocolo em Zircônia</h2>
+                        <p>Estrutura 100% digital com alta resistência, naturalidade e acabamento artesanal refinado.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="trabalho-card">
+                        <img src="protese-2.jpg" alt="Lentes de Contato Odontológicas">
+                        <h2>Lentes de Contato</h2>
+                        <p>Lâminas ultra-finas em cerâmica pura para transformação estética com mínima invasão.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="trabalho-card">
+                        <img src="protese-3.jpg" alt="Coroa Total Metal-Free">
+                        <h2>Coroa Metal-Free</h2>
+                        <p>Adaptação passiva perfeita e translucidez idêntica ao dente natural do paciente.</p>
+                    </div>
+                                        <div class="trabalho-card">
+                        <img src="protese-1.jpg" alt="Protocolo sobre Implante">
+                        <h2>Protocolo em Zircônia</h2>
+                        <p>Estrutura 100% digital com alta resistência, naturalidade e acabamento artesanal refinado.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="trabalho-card">
+                        <img src="protese-2.jpg" alt="Lentes de Contato Odontológicas">
+                        <h2>Lentes de Contato</h2>
+                        <p>Lâminas ultra-finas em cerâmica pura para transformação estética com mínima invasão.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="trabalho-card">
+                        <img src="protese-3.jpg" alt="Coroa Total Metal-Free">
+                        <h2>Coroa Metal-Free</h2>
+                        <p>Adaptação passiva perfeita e translucidez idêntica ao dente natural do paciente.</p>
+                    </div>
+                </div>
+
+                <!-- Botão Direito -->
+                <button class="btn-carrossel next" id="btn-next" aria-label="Próximo">
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
+            </div>
         </section>
     </main>
     <footer>
