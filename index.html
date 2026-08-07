@@ -13,25 +13,29 @@
 </head>
 <body>
     <header>
-        <img src="imagens/logo-vetorizada.png" alt="Logo JM" id="logo">
-        <nav>
-            <div class="menu" id="menu">
-                <a href="index.html">Home</a>
-                <div class="protese">
-                    <a href="#">Próteses</a>
-                    <ul>
-                        <li>Orto</li>
-                        <li>Implante</li>
-                        <li>Flex</li>
-                        <li>PPR</li>
-                    </ul>
-                </div>
-                <a href="#">Fale Conosco</a>
-                <a href="#" id="ultimo">Quem Somos? </a>
-            </div>
-            <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-        </nav>
-    </header> 
+        <img src="imagens/logo-vetorizada.png" alt="Logo JM" id="logo">            
+        <button id="menu-btn" class="menu-btn" aria-label="Abrir Menu">
+                <span id="burger" class="material-symbols-outlined">menu</span>
+        </button>
+    </header>         
+    <nav id="sidebar" class="sidebar">
+        <button id="close-btn" class="close-btn">&times;</button>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.instagram.com/jmsolucoesproteticas/" target="_blank" rel="noopener" aria-label="Instagram" class="instagram">
+                <i class="fa-brands fa-instagram"></i> 
+            </a>
+            <a href="https://wa.me/message/56S2XLPK5G65A1" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+    </nav>
+    <div id="overlay" class="overlay"></div>
     <main>
         <section id="home" class="home">
             <div id="texto" class="texto">
@@ -154,6 +158,12 @@
                     <i class="fa-solid fa-circle-chevron-right"></i>
                 </button>
             </div>
+        </section>
+        <section class="procedimentos" id="procedimentos">
+
+        </section>
+        <section id="feedback" class="feedback">
+
         </section>
     </main>
     <footer>

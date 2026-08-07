@@ -51,19 +51,106 @@ header > img#logo{
   align-self: flex-start;
 }
 
-nav{
-    border: none;
-    text-align: center;
-    align-self: flex-start;
+header > .menu-btn {
+  border: none;            /* Remove a borda */
+  background: transparent; /* Remove o fundo cinza */
+  outline: none;           /* Remove a linha de seleção ao clicar */
+  padding: 0;              /* Remove o espaçamento interno padrão */
+  cursor: pointer;         /* Transforma o cursor em mãozinha ao passar o mouse */
+  z-index: 2;
 }
 
-nav > .material-symbols-outlined{
+header > .menu-btn >.material-symbols-outlined{
+    background-color: var(--cor-fundo);
     color: var(--cor3);
     font-size: 2em;
 }
 
-nav > .menu{
-    display: none;
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px; /* Escondido à direita da tela */
+  width: 250px;
+  height: 100vh;
+  background-color: var(--cor2);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.sidebar.active {
+  right: 0; /* Desliza para dentro da tela */
+}
+
+/* Estilização básica da lista */
+.sidebar > ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar > .close-btn {
+  color: var(--cor6);
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  float: right;
+  cursor: pointer;
+}
+
+.sidebar > .close-btn:active {
+  color: var(--cor5);
+}
+
+.sidebar > .close-btn:hover{
+  color: var(--cor5);
+}
+
+.sidebar a{
+    color: var(--cor6);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.sidebar a:active{
+    color: var(--cor5);
+    text-decoration: none;
+}
+
+.sidebar a:hover{
+    color: var(--cor5);
+    text-decoration: none;
+}
+
+.sidebar > .social-links > .instagram{
+    margin-right: 1em;
+}
+
+.sidebar > .social-links > a > .fa-instagram, .fa-whatsapp{
+    font-size: 1.4em;
+}
+
+/* Fundo escurecido */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
 }
 
 /*   HOME   */
@@ -506,10 +593,10 @@ article#nos{
   flex: 0 0 80vw; /* Card espião no mobile */
   scroll-snap-align: center;    /* Centraliza o card ativo ao parar de arrastar */
   
-  background: #ffffff;
+  background: #fdfdef;
   border-radius: 16px;
   padding: 16px;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.16);
   
   display: flex;
   flex-direction: column;
