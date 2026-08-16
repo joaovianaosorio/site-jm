@@ -752,7 +752,6 @@ section#procedimentos{
     background-repeat: repeat; /* Permite que a estampa se repita suavemente */
     text-align: center;
     padding-top: 3em;
-    padding-bottom: 3em;
 }
 
 .procedimentos > h2{
@@ -927,7 +926,7 @@ section#procedimentos > .cards-procedimentos{
   position: relative;
   display: block;
   width: 200%; /* Largura dobrada para dar espaço de movimento */
-  height: 200px;
+  height: 150px;
   /* Aplica a animação contínua */
   animation: moverOnda 6s ease-in-out infinite alternate;
 }

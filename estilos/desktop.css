@@ -87,3 +87,6 @@ section#procedimentos > .cards-procedimentos {
   .card-verso img {
     height: 280px;
   }
+
+  .onda-animada {
+  height: 180px;}
