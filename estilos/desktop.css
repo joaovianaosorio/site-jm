@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+header > .menu-btn, .close-btn {
+display: none;
+}
+
+.categoria-tabs {
+display: flex;
+justify-content: center; /* Centralizado por padrão (Desktop) */
+gap: 10px;
+}
+
+.carrossel-wrapper{
+max-width: 1200px;
+} 
+
+.trabalho-card{
+flex: 0 0 300px;
+}
+
+.btn-carrossel{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-carrossel:hover{
+    background-color: var(--cor5, #f2cf1d);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.btn-carrossel.prev{ 
+    left: -3.5em  ; 
+}
+
+.btn-carrossel.next{ 
+    right: -4.5em; 
+}
+
+.fa-circle-chevron-left{
+    height: 2em;
+    width: auto;
+}
+
+.fa-circle-chevron-right{
+    height: 2em;
+    width: auto;
+}
+
+section#procedimentos{
+    background-position: center -20em;
+}
+
+section#procedimentos > .cards-procedimentos {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 3em;          /* Altere este valor para controlar a distância (ex: 10px, 15px ou 20px) */
+    max-width: 1200px;  /* Limite de largura total do grupo de cards na tela */
+    margin: 0 auto;
+  }
+
+  /* Tamanho de CADA card individual */
+  .card-antes-depois {
+    width: 100%;
+    max-width: 380px;  /* Largura ideal de cada card no desktop (360px a 400px) */
+    height: 440px;
+  }
+
+  /* Imagens */
+  .card-frente img, 
+  .card-verso img {
+    height: 280px;
+  }

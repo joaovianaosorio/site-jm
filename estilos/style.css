@@ -175,6 +175,7 @@ header > .menu-btn >.material-symbols-outlined{
     font-family: var(--fonte-destaque);
     margin-top: 1.4em;
     margin-left: .8em;
+    text-transform: uppercase;
 }
 
 .home > .texto > .titulo > h1 > .destaque{
@@ -469,6 +470,8 @@ section#cards{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/*    QUEM SOMOS     */
+
 article#nos{
     background-color: var(--cor6);
     background-image: url('../imagens/fundo-nos.png');
@@ -477,7 +480,7 @@ article#nos{
     text-align: center;
 }
 
-.nos > h1{
+.nos > h2{
     background-color: var(--cor6);
     width: 60vw;
     margin: auto;
@@ -485,9 +488,10 @@ article#nos{
     color: var(--cor9);
     font-size: 1.6em;
     border-radius: 10px;
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
 }
 
-.nos > h1 > .somos{
+.nos > h2 > .somos{
     color: var(--cor5);
 }
 
@@ -528,14 +532,15 @@ article#nos{
     color: var(--cor9);
 }
 
-.nos > .quem-somos > .texto-nos > h2{
+.nos > .quem-somos > .texto-nos > h3{
     color: var(--cor5);
     font-size: 1.2em;
     padding-top: .3em;
     margin-bottom: 1em;
+    text-align: left;
 }
 
-.nos > .quem-somos > .texto-nos > h2 > .slogan{
+.nos > .quem-somos > .texto-nos > h3 > .slogan{
     color: var(--cor9);
 }
 
@@ -543,18 +548,24 @@ article#nos{
     font-weight: normal;
 }
 
+/*    SERVIÇOS     */
+
 .servicos{
     background-color: var(--cor-fundo);
     padding-top: 3em;
+    padding-bottom: 3em;
+    box-shadow: 1px 1px 1px #3b3b3b41;
+    border-bottom: 1px solid #3b3b3b1f;
 }
 
-.servicos > h1{
+.servicos > h2{
     font-family: var(--fonte-destaque);
     font-size: 1.6em;
     text-align: center;
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
 }
 
-.servicos > h1 > .destaque-pt{
+.servicos > h2 > .destaque-pt{
    color: var(--cor4);
 }
 
@@ -562,6 +573,44 @@ article#nos{
   position: relative;
   width: 100%;
   margin: 0 auto;
+}
+
+/* ==========================================
+   ABAS DE CATEGORIA
+   ========================================== */
+.categoria-tabs {
+  display: flex;
+  justify-content: flex-start; /* Alinha à esquerda no celular */
+  padding: 0 20px;
+  margin: 1.2em 0em;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.tab-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.tab-btn.active {
+  background-color: var(--cor9, #0056b3); /* Usa sua cor principal */
+  color: #ffffff;
+  border-color: var(--cor9, #0056b3);
+}
+
+/* Classe utilitária para ocultar cards filtrados */
+.trabalho-card.escondido {
+  display: none !important;
 }
 
 /* ==========================================
@@ -596,7 +645,7 @@ article#nos{
   background: #fdfdef;
   border-radius: 16px;
   padding: 16px;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.16);
   
   display: flex;
   flex-direction: column;
@@ -606,11 +655,12 @@ article#nos{
   width: 100%;
   height: 200px;
   object-fit: cover;    /* Mantém a proporção da foto sem distorcer */
+  object-position: center; /* Centraliza a imagem na horizontal e vertical */
   border-radius: 10px;
   margin-bottom: 12px;
 }
 
-.trabalho-card h2 {
+.trabalho-card h3 {
   font-size: 1.2rem;
   color: var(--cor9);
   margin-bottom: 8px;
@@ -625,6 +675,274 @@ article#nos{
 .servicos > .carrossel-wrapper > .btn-carrossel{
     display: none;
 }
+
+/*    NOVAS TECNOLOGIAS    */
+
+section#tecnologias{
+    background: linear-gradient(180deg, var(--cor-fundo) 20%, var(--cor6) 100%);
+    padding-top: 3em;
+    padding-bottom: 2em;
+    text-align: center;
+    box-shadow: 1px 1px 1px #3b3b3b41;
+    border-bottom: 1px solid #3b3b3b1f;
+}
+
+.tecnologias > h2{
+    background-color: var(--cor-fundo);
+    width: 60vw;
+    margin: auto;
+    font-family: var(--fonte-destaque);
+    color: var(--cor9);
+    font-size: 1.6em;
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
+    border-radius: 10px;
+}
+
+.tecnologias > h2 > .tecnologia{
+    color: var(--cor4);
+}
+
+.tecnologias > .novas-tecnologias{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5em;
+    padding-bottom: 3em;
+}
+
+.tecnologias > .novas-tecnologias > img{
+    height: 200px;
+    width: auto;
+}
+
+.tecnologias > .novas-tecnologias > .texto-tec{
+    background-image: linear-gradient(180deg, #F6F6E8 20%, var(--cor6) 100%);
+    font-weight: bold;
+    text-align: justify;
+    width: 90%;
+    border: 1px solid #3b3b3b27;
+    border-radius: 10px;
+    margin-top: 1.5em;
+    padding: .6em;
+    color: var(--cor9);
+}
+
+.tecnologias > .novas-tecnologias > .texto-tec > h3{
+    color: var(--cor9);
+    font-size: 1.2em;
+    padding-top: .3em;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.tecnologias > .novas-tecnologias > .texto-tec > h3 > .text-diferente{
+    color: var(--cor9);
+}
+
+.tecnologias > .novas-tecnologias > .texto-tec > p{
+    font-weight: normal;
+}
+
+/*    PROCEDIMENTOS     */
+
+section#procedimentos{
+    background-image: url('../imagens/fundo-nos.png');
+    background-position: center -8.5em;
+    background-repeat: repeat; /* Permite que a estampa se repita suavemente */
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.procedimentos > h2{
+    background-color: var(--cor6);
+    width: 80vw;
+    margin: auto;
+    padding: 3px;
+    font-family: var(--fonte-destaque);
+    color: var(--cor9);
+    font-size: 1.6em;
+    border-radius: 10px;
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
+}
+
+.procedimentos > h2 > .destaque{
+    color: var(--cor5);
+}
+
+.procedimentos > h3{
+    color: #666;
+    background-color: var(--cor6);
+    margin: auto;
+    width: 90vw;
+    border-radius: 20px;
+    margin-top: 1em;
+    padding: 4px;
+}
+
+section#procedimentos > .cards-procedimentos{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* Container Principal */
+.card-antes-depois {
+  width: 100%;
+  max-width: 340px;
+  height: 420px;
+  margin: 15px auto;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Container Interno */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Configuração Geral das Faces */
+.card-frente, 
+.card-verso {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  /* Transição suave em 2D (Sem desfoque de GPU) */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Face da Frente (Ativa por padrão) */
+.card-frente {
+  z-index: 2;
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Face do Verso (Oculta por padrão) */
+.card-verso {
+  z-index: 1;
+  transform: scaleX(0);
+  opacity: 0;
+  background-color: #fdfddb;
+}
+
+/* --- TROCA NO DESKTOP (Passar o Mouse) --- */
+@media (hover: hover) {
+  .card-antes-depois:hover .card-frente {
+    transform: scaleX(0);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .card-antes-depois:hover .card-verso {
+    transform: scaleX(1);
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+/* --- TROCA NO MOBILE E NO CLIQUE (Classe do JS) --- */
+.card-antes-depois.virado .card-frente {
+  transform: scaleX(0);
+  opacity: 0;
+  z-index: 1;
+}
+
+.card-antes-depois.virado .card-verso {
+  transform: scaleX(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Imagens */
+.card-frente img, 
+.card-verso img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Conteúdo de Texto */
+.card-info {
+  padding: 16px;
+  text-align: left;
+}
+
+.card-info h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.card-info p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #666666;
+  line-height: 1.4;
+}
+
+/* Etiquetas (Antes / Depois) */
+.tag-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  z-index: 3;
+}
+
+.tag-antes {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.tag-depois {
+  background-color: #d4a307;
+}
+/*    ONDAS E EFEITOS   */
+
+.divisor-secao {
+  width: 100%;
+  overflow: hidden; /* Esconde o excesso da onda nas laterais */
+  line-height: 0;
+  background-color: #F2F2F2; /* Cor da seção cinza acima */
+}
+
+.onda-animada {
+  position: relative;
+  display: block;
+  width: 200%; /* Largura dobrada para dar espaço de movimento */
+  height: 200px;
+  /* Aplica a animação contínua */
+  animation: moverOnda 6s ease-in-out infinite alternate;
+}
+
+/* Animação que desloca a onda suavemente de um lado para o outro */
+@keyframes moverOnda {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/*    FEEDBACK DE PACIENTES    */
 
 footer{
     background-color: white;
