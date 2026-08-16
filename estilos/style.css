@@ -943,6 +943,260 @@ section#procedimentos > .cards-procedimentos{
 
 /*    FEEDBACK DE PACIENTES    */
 
-footer{
-    background-color: white;
+/* Seção Principal (Fundo Claro / Clínico) */
+.depoimentos-clean {
+  background-color: #f8f9fa; /* Fundo cinza bem suave */
+  padding: 80px 20px;
+  color: #2b2b2b;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.depoimentos-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Tag de destaque no topo */
+.depoimentos-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #0b72b9; /* Cor principal da sua marca */
+  background-color: #e6f2fa;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.depoimentos-container h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px 0;
+}
+
+.depoimentos-subtitulo {
+  font-size: 1.05rem;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto 48px auto;
+  line-height: 1.5;
+}
+
+/* Grid Adaptável */
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Card Individual */
+.card-depoimento-clean {
+  width: 90vw;
+  background-color: #ffffff;
+  border: 1px solid #eaebed;
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin: auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito suave ao passar o mouse */
+.card-depoimento-clean:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+.badge-verificado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0b72b9;
+  background-color: #e6f2fa;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* Aspas em Destaque */
+.aspas {
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #0b72b9;
+  font-family: Georgia, serif;
+  margin-bottom: -10px;
+  opacity: 0.35;
+}
+
+.texto-depoimento {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin: 0 0 24px 0;
+  font-style: italic;
+}
+
+/* Informações do Autor */
+.autor-box {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.autor-info h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.autor-info h5 {
+  display: block;
+  font-size: 0.82rem;
+  color: #777777;
+  margin-top: 3px;
+}
+
+/* Rodapé Geral */
+.rodape-site {
+  background-color: #121315; /* Fundo escuro elegante */
+  color: #a0a0a0;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding-top: 60px;
+  margin-top: 3em;
+  border-top: 3px solid red;
+}
+
+.rodape-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+/* Colunas */
+.rodape-logo {
+  max-width: 140px; /* Logo discreta e compacta */
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.rodape-descricao {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #888888;
+}
+
+.rodape-titulo {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Links */
+.rodape-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rodape-links li {
+  margin-bottom: 10px;
+}
+
+.rodape-links a {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.rodape-links a:hover {
+  color: #ffffff;
+}
+
+/* Contatos */
+.rodape-contato {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rodape-contato li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  margin-bottom: 12px;
+  color: #a0a0a0;
+}
+
+.rodape-contato svg {
+  color: #0b72b9; /* Cor principal de destaque */
+  flex-shrink: 0;
+}
+
+/* Redes Sociais */
+.rodape-redes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rede-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  background-color: #1e2024;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.rede-icon:hover {
+  background-color: #2a2d33;
+  transform: translateY(-2px);
+}
+
+/* Barra de Direitos e Assinatura */
+.rodape-barras-direitos {
+  border-top: 1px solid #22242a;
+  padding: 20px;
+  background-color: #0b0c0e;
+}
+
+.direitos-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: #777777;
+}
+
+.direitos-container p {
+  margin: 0;
+}
+
+.assinatura-dev span {
+  color: #ffffff;
+  font-weight: 600;
 }
