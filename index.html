@@ -166,6 +166,38 @@
                     <i class="fa-solid fa-circle-chevron-right"></i>
                 </button>
             </div>
+            <section class="secao-diferenciais">
+                <div class="diferenciais-container">
+                    
+                    <!-- Card Horizontal Rotativo -->
+                    <div class="card-diferencial-rotativo" id="cardDiferencial">
+                    <!-- Barra de Progresso Visual -->
+                        <div class="barra-progresso-container">
+                            <div class="barra-progresso" id="barraProgresso"></div>
+                        </div>
+
+                        <!-- Conteúdo Interno do Card -->
+                        <div class="diferencial-conteudo">
+                            <div class="diferencial-icone" id="diferencialIcone">
+                            <!-- Ícone injetado via JS -->
+                            </div>
+                            <div class="diferencial-texto">
+                            <h3 id="diferencialTitulo">Título do Pilar</h3>
+                            <p id="diferencialDescricao">Descrição detalhada do pilar de qualidade do laboratório.</p>
+                            </div>
+                        </div>
+
+                        <!-- Controles / Indicadores (Dots) -->
+                        <div class="diferencial-indicadores" id="diferencialIndicadores">
+                            <span class="dot ativo" onclick="mudarCardManual(0)"></span>
+                            <span class="dot" onclick="mudarCardManual(1)"></span>
+                            <span class="dot" onclick="mudarCardManual(2)"></span>
+                            <span class="dot" onclick="mudarCardManual(3)"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
         </section>
         <section id="tecnologias" class="tecnologias">
             <h2>Novas <span class="tecnologia">tecnologias!</span></h2>

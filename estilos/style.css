@@ -676,6 +676,126 @@ article#nos{
     display: none;
 }
 
+/* Container da Seção Cards abaixo do Carrossel */
+.secao-diferenciais {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.diferenciais-container {
+  width: 100%;
+  max-width: 850px; /* Largura proporcional do card horizontal */
+}
+
+/* Card Principal */
+.card-diferencial-rotativo {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 32px 20px 32px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-diferencial-rotativo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+
+/* Barra de Progresso de Tempo */
+.barra-progresso-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #f1f5f9;
+}
+
+.barra-progresso {
+  width: 0%;
+  height: 100%;
+  background-color: #0b72b9; /* Cor principal de destaque */
+  transition: width 0.1s linear;
+}
+
+/* Conteúdo (Ícone + Texto) */
+.diferencial-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 70px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.diferencial-conteudo.fading {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.diferencial-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background-color: #e6f2fa;
+  color: #0b72b9;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.diferencial-texto h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.diferencial-texto p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+/* Pontos Indicadores (Dots) */
+.diferencial-indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.dot.ativo {
+  background-color: #0b72b9;
+  width: 20px;
+  border-radius: 10px;
+}
+
+/* Ajuste Responsivo (Mobile) */
+@media (max-width: 768px) {
+  .diferencial-conteudo {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+}
+
 /*    NOVAS TECNOLOGIAS    */
 
 section#tecnologias{
