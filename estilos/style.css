@@ -37,7 +37,11 @@ body, html {
   color: var(--cor8);
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+}
+
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Ajuste para a altura exata do seu header fixo */
 }
 
 /* ==========================================
@@ -268,8 +272,12 @@ header.menu-aberto > img#logo{
 
 .sidebar .social-links i {
   font-size: 2.2em;
-  color: var(--cor6);
+  color: var(--cor6) !important;
   transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar > .social-links > .instagram {
+  color: var(--cor6) !important;
 }
 
 .sidebar .social-links a:hover i {
@@ -329,6 +337,7 @@ header.menu-aberto > img#logo{
     border-radius: 35px;
     width: 90%;
     box-shadow: 2px 2px 2px #3b3b3b82;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 .home > .texto > .cta > a > .fa-whatsapp{
     font-size: 1.2em;
@@ -343,6 +352,11 @@ header.menu-aberto > img#logo{
 
 .home > .texto > .cta > a:active{
     background-color: #d1b769;
+}
+
+.home > .texto > .cta > a:hover {
+  background-color: var(--cor4);
+  transform: translateY(-2px);
 }
 
 .home > .imagem{
@@ -963,8 +977,8 @@ section#tecnologias{
     padding-top: 3em;
     padding-bottom: 2em;
     text-align: center;
-    box-shadow: 1px 1px 1px #3b3b3b41;
-    border-bottom: 1px solid #3b3b3b1f;
+    box-shadow: 1px 1px 1px var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
 }
 
 .tecnologias > h2{
@@ -1226,6 +1240,12 @@ section#procedimentos > .cards-procedimentos{
 
 /*    FEEDBACK DE PACIENTES    */
 
+.feedback{
+  padding-bottom: 3em;
+  box-shadow: 1px 1px 1px var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
 /* Seção Principal (Fundo Claro / Clínico) */
 .depoimentos-clean {
   background-color: #f8f9fa; /* Fundo cinza bem suave */
@@ -1243,12 +1263,12 @@ section#procedimentos > .cards-procedimentos{
 /* Tag de destaque no topo */
 .depoimentos-tag {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: .82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #0b72b9; /* Cor principal da sua marca */
-  background-color: #e6f2fa;
+  color: var(--cor-fundo-diferenciais); /* Cor principal da sua marca */
+  background-color: var(--cor5);
   padding: 6px 16px;
   border-radius: 20px;
   margin-bottom: 12px;
@@ -1263,7 +1283,7 @@ section#procedimentos > .cards-procedimentos{
 
 .depoimentos-subtitulo {
   font-size: 1.05rem;
-  color: #666666;
+  color: var(--cor-subtitulo);
   max-width: 600px;
   margin: 0 auto 48px auto;
   line-height: 1.5;
@@ -1279,6 +1299,7 @@ section#procedimentos > .cards-procedimentos{
 /* Card Individual */
 .card-depoimento-clean {
   width: 100%;
+  height: 22em;
   max-width: 360px;
   background-color: #ffffff;
   border: 1px solid #eaebed;
@@ -1297,6 +1318,7 @@ section#procedimentos > .cards-procedimentos{
 .card-depoimento-clean:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--cor5);
 }
 
 .badge-verificado {
@@ -1305,8 +1327,8 @@ section#procedimentos > .cards-procedimentos{
   gap: 6px;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #0b72b9;
-  background-color: #e6f2fa;
+  color: var(--cor5);
+  background-color: var(--cor-fundo);
   padding: 4px 10px;
   border-radius: 12px;
   margin-bottom: 12px;
@@ -1316,10 +1338,10 @@ section#procedimentos > .cards-procedimentos{
 .aspas {
   font-size: 3.5rem;
   line-height: 1;
-  color: #0b72b9;
+  color: var(--cor5);
   font-family: Georgia, serif;
   margin-bottom: -10px;
-  opacity: 0.35;
+  opacity: 1;
 }
 
 .texto-depoimento {
@@ -1352,8 +1374,8 @@ section#procedimentos > .cards-procedimentos{
 
 /*  INSTAGRAM    */
 .secao-instagram {
-  padding: 80px 20px;
-  background-color: #f8f9fa;
+  padding: 3em 1.3em;
+  background-color: var(--cor-fundo);
   overflow: hidden;
   font-family: system-ui, -apple-system, sans-serif;
 }
@@ -1374,8 +1396,8 @@ section#procedimentos > .cards-procedimentos{
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #0b72b9;
-  background-color: #e6f2fa;
+  color: var(--cor-fundo-diferenciais);
+  background-color: var(--cor5);
   padding: 6px 16px;
   border-radius: 20px;
   margin-bottom: 16px;
@@ -1384,7 +1406,7 @@ section#procedimentos > .cards-procedimentos{
 .instagram-texto h2 {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #1e293b;
+  color: var(--cor8);
   margin: 0 0 16px 0;
   line-height: 1.25;
 }
@@ -1392,7 +1414,7 @@ section#procedimentos > .cards-procedimentos{
 .instagram-texto p {
   font-size: 1.05rem;
   line-height: 1.6;
-  color: #64748b;
+  color: var(--cor-subtitulo);
   margin-bottom: 32px;
 }
 
@@ -1406,15 +1428,15 @@ section#procedimentos > .cards-procedimentos{
 .handle {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #0b72b9;
+  color: var(--cor3);
 }
 
 .btn-instagram {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #0f172a;
-  color: #ffffff;
+  background-color: var(--cor5);
+  color: var(--cor-fundo-diferenciais);
   font-weight: 600;
   padding: 14px 28px;
   border-radius: 12px;
@@ -1424,7 +1446,7 @@ section#procedimentos > .cards-procedimentos{
 }
 
 .btn-instagram:hover {
-  background-color: #0b72b9;
+  background-color: var(--cor4);
   transform: translateY(-2px);
 }
 
@@ -1560,7 +1582,7 @@ section#procedimentos > .cards-procedimentos{
   font-family: system-ui, -apple-system, sans-serif;
   padding-top: 60px;
   margin-top: 3em;
-  border-top: 3px solid red;
+  border-top: 1px solid var(--cor5);
 }
 
 .rodape-container {
@@ -1572,14 +1594,24 @@ section#procedimentos > .cards-procedimentos{
   gap: 40px;
 }
 
+.marca{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
 /* Colunas */
 .rodape-logo {
-  max-width: 140px; /* Logo discreta e compacta */
-  height: auto;
+  height: 100px; /* Logo discreta e compacta */
+  width: auto;
   margin-bottom: 16px;
+  margin-right: 3em;
+  border-radius: 5px;
 }
 
 .rodape-descricao {
+  width: 80%;
   font-size: 0.88rem;
   line-height: 1.5;
   color: #888888;
@@ -1631,7 +1663,7 @@ section#procedimentos > .cards-procedimentos{
 }
 
 .rodape-contato svg {
-  color: #0b72b9; /* Cor principal de destaque */
+  color: var(--cor5); /* Cor principal de destaque */
   flex-shrink: 0;
 }
 
@@ -1658,6 +1690,10 @@ section#procedimentos > .cards-procedimentos{
 .rede-icon:hover {
   background-color: #2a2d33;
   transform: translateY(-2px);
+}
+
+.rede-icon svg{
+  color: var(--cor5);
 }
 
 /* Barra de Direitos e Assinatura */

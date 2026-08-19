@@ -14,7 +14,7 @@ header > img{
     position: static;
     width: auto;
     height: auto;
-    background-color: transparent;
+    background-color: transparent !important;
     box-shadow: none;
     padding: 0;
     margin-right: 3em;
@@ -155,3 +155,8 @@ section#procedimentos > .cards-procedimentos {
 
   .onda-animada {
   height: 180px;}
+
+  .marca{
+    display: flex;
+    flex-flow: column wrap;
+  }
