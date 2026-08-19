@@ -1,75 +1,128 @@
-// MENU
+// ==========================================
+// 1. SELEÇÃO ÚNICA DE ELEMENTOS
+// ==========================================
+const header = document.querySelector('header');
+const secoesEscuras = document.querySelectorAll('.secao-escura');
 const menuBtn = document.getElementById('menu-btn');
 const closeBtn = document.getElementById('close-btn');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
+const menuIcon = menuBtn ? menuBtn.querySelector('.material-symbols-outlined') : null;
 
-function toggleMenu() {
-  sidebar.classList.toggle('active');
-  overlay.classList.toggle('active');
+// ==========================================
+// 2. CONTROLE DO MENU SIDEBAR (MOBILE)
+// ==========================================
+function abrirMenu() {
+  if (sidebar) sidebar.classList.add('active');
+  if (overlay) overlay.classList.add('active');
+  if (header) header.classList.add('menu-aberto'); // Escurece o header ao fundo
+  if (menuIcon) menuIcon.textContent = 'close';
 }
 
-menuBtn.addEventListener('click', toggleMenu);
-closeBtn.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
+function fecharMenu() {
+  if (sidebar) sidebar.classList.remove('active');
+  if (overlay) overlay.classList.remove('active');
+  if (header) header.classList.remove('menu-aberto'); // Volta a cor original
+  if (menuIcon) menuIcon.textContent = 'menu';
+}
 
-// LÓGICA DE FILTRAGEM POR ABAS
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    if (sidebar && sidebar.classList.contains('active')) {
+      fecharMenu();
+    } else {
+      abrirMenu();
+    }
+  });
+}
+
+if (closeBtn) closeBtn.addEventListener('click', fecharMenu);
+if (overlay) overlay.addEventListener('click', fecharMenu);
+
+const sidebarLinks = document.querySelectorAll('.sidebar a');
+sidebarLinks.forEach(link => link.addEventListener('click', fecharMenu));
+
+// ==========================================
+// 3. MUDANÇA DE COR DO HEADER NA ROLAGEM
+// ==========================================
+function checarPosicaoHeader() {
+  if (!header) return;
+  // Se o menu estiver aberto, NÃO altera a cor do header na rolagem
+  if (sidebar && sidebar.classList.contains('active')) return;
+
+  const headerHeight = header.offsetHeight;
+  let sobreSecaoEscura = false;
+
+  secoesEscuras.forEach(secao => {
+    const rect = secao.getBoundingClientRect();
+    if (rect.top <= headerHeight && rect.bottom >= 0) {
+      sobreSecaoEscura = true;
+    }
+  });
+
+  if (sobreSecaoEscura) {
+    header.classList.add('header-escuro');
+  } else {
+    header.classList.remove('header-escuro');
+  }
+}
+
+window.addEventListener('scroll', () => window.requestAnimationFrame(checarPosicaoHeader));
+window.addEventListener('DOMContentLoaded', checarPosicaoHeader);
+window.addEventListener('resize', checarPosicaoHeader);
+
+// ==========================================
+// 4. LÓGICA DE FILTRAGEM POR ABAS
+// ==========================================
 const tabBtns = document.querySelectorAll('.tab-btn');
 const trabalhoCards = document.querySelectorAll('.trabalho-card');
 
 tabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Remove a classe 'active' de todos os botões e adiciona no clicado
     tabBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
     const categoriaSelecionada = btn.getAttribute('data-categoria');
 
-    // Filtra os cards
     trabalhoCards.forEach(card => {
-    // Transforma a lista de categorias em um array de palavras
-    const categoriasDoCard = card.getAttribute('data-categoria').split(' ');
+      const attr = card.getAttribute('data-categoria');
+      const categoriasDoCard = attr ? attr.split(' ') : [];
 
-    // Verifica se a categoria clicada está na lista do card
-    if (categoriasDoCard.includes(categoriaSelecionada)) {
-      card.classList.remove('escondido');
-    } else {
-      card.classList.add('escondido');
-    }
+      if (categoriasDoCard.includes(categoriaSelecionada)) {
+        card.classList.remove('escondido');
+      } else {
+        card.classList.add('escondido');
+      }
     });
 
-    // Reseta a rolagem do carrossel para o início ao trocar de aba
-    carrossel.scrollTo({ left: 0, behavior: 'smooth' });
+    if (carrossel) carrossel.scrollTo({ left: 0, behavior: 'smooth' });
   });
 });
 
-// CARROSSEL
-
-// 1. Seleciona os elementos no HTML
+// ==========================================
+// 5. CARROSSEL DE TRABALHOS
+// ==========================================
 const carrossel = document.getElementById('carrossel');
 const btnPrev = document.getElementById('btn-prev');
 const btnNext = document.getElementById('btn-next');
 
-btnNext.addEventListener('click', () => {
-  // Rola quase a largura inteira que está aparecendo na tela no momento
-  const scrollAmount = carrossel.clientWidth * 0.8; 
-
-  carrossel.scrollBy({
-    left: scrollAmount,
-    behavior: 'smooth'
+if (btnNext && carrossel) {
+  btnNext.addEventListener('click', () => {
+    const scrollAmount = carrossel.clientWidth * 0.8;
+    carrossel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
-});
+}
 
-btnPrev.addEventListener('click', () => {
-  const scrollAmount = carrossel.clientWidth * 0.8;
-
-  carrossel.scrollBy({
-    left: -scrollAmount,
-    behavior: 'smooth'
+if (btnPrev && carrossel) {
+  btnPrev.addEventListener('click', () => {
+    const scrollAmount = carrossel.clientWidth * 0.8;
+    carrossel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   });
-});
+}
 
-// Dados dos diferenciais/pilares (abaixo do Carrossel)
+// ==========================================
+// 6. CARROSSEL DE DIFERENCIAIS / PILARES
+// ==========================================
 const diferenciais = [
   {
     titulo: "Rigor no Cumprimento de Prazos",
@@ -94,13 +147,12 @@ const diferenciais = [
 ];
 
 let indiceAtual = 0;
-const tempoTotal = 5000; // 5 segundos
-const intervaloTick = 50; // Atualização da barra de progresso
+const tempoTotal = 5000;
+const intervaloTick = 50;
 let tempoDecorrido = 0;
 let temporizador = null;
 let estaPausado = false;
 
-// Elementos DOM
 const elTitulo = document.getElementById("diferencialTitulo");
 const elDescricao = document.getElementById("diferencialDescricao");
 const elIcone = document.getElementById("diferencialIcone");
@@ -108,10 +160,10 @@ const elBarra = document.getElementById("barraProgresso");
 const elDots = document.querySelectorAll(".dot");
 const cardElemento = document.getElementById("cardDiferencial");
 
-// Renderiza o card atual com transição suave
 function renderizarCard(index) {
+  if (!elTitulo || !elDescricao || !elIcone) return;
   const conteudo = document.querySelector(".diferencial-conteudo");
-  conteudo.classList.add("fading");
+  if (conteudo) conteudo.classList.add("fading");
 
   setTimeout(() => {
     elTitulo.textContent = diferenciais[index].titulo;
@@ -122,12 +174,12 @@ function renderizarCard(index) {
       dot.classList.toggle("ativo", idx === index);
     });
 
-    conteudo.classList.remove("fading");
+    if (conteudo) conteudo.classList.remove("fading");
   }, 200);
 }
 
-// Inicia o ciclo de rotação
 function iniciarCiclo() {
+  if (!elBarra) return;
   clearInterval(temporizador);
   tempoDecorrido = 0;
 
@@ -146,23 +198,16 @@ function iniciarCiclo() {
   }, intervaloTick);
 }
 
-// Controle Manual ao Clicar nos Dots
-function mudarCardManual(index) {
-  indiceAtual = index;
+if (cardElemento) {
+  cardElemento.addEventListener("mouseenter", () => { estaPausado = true; });
+  cardElemento.addEventListener("mouseleave", () => { estaPausado = false; });
   renderizarCard(indiceAtual);
   iniciarCiclo();
 }
 
-// Pausa ao passar o mouse por cima
-cardElemento.addEventListener("mouseenter", () => { estaPausado = true; });
-cardElemento.addEventListener("mouseleave", () => { estaPausado = false; });
-
-// Inicialização
-renderizarCard(indiceAtual);
-iniciarCiclo();
-
-// ANTES E DEPOIS
-
+// ==========================================
+// 7. CARDS ANTES E DEPOIS
+// ==========================================
 document.querySelectorAll('.card-antes-depois').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('virado');

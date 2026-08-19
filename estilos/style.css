@@ -9,6 +9,8 @@
 
 :root { 
     --cor-fundo: #FDFDDB;
+    --cor-fundo-diferenciais: #fffff0;
+    --cor-fundo-diferenciais-i:  #f8f8c2;
     --cor1: #FFFF7D;
     --cor2: #FFE24F;
     --cor3: #F2CF1D;
@@ -16,141 +18,261 @@
     --cor5: #CFA526;
     --cor6: #F2F2F2;
     --cor7: #D6D6D6;
-    --cor-transparente: #3b3b3bfd;
-    --cor9: #171717;
+    --cor8: #171717;
+    --cor9: #b69021;
+    --cor10: #fff7de3f;
+
+
+    --cor-shadow: #3b3b3b41;
+    --cor-borda: #3b3b3b1f;
+     --cor-subtitulo: #171717af;
 
     --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
     --fonte-destaque: 'Inter', sans-serif;  
 }
 
-body, html{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--cor-fundo);
-    width: 100%;
-    overflow-x: hidden;
+body, html {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor8);
+  width: 100%;
 }
 
-header{
-    /*background-color: rgba(0, 0, 0, 0.801);*/
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    height: 3.2em;
-    padding-top: .8em;
-    padding-right: .5em;
-    padding-left: .5em;
-    box-shadow: 1px 1px 1px #3b3b3b41;
-    border-bottom: 1px solid #3b3b3b1f;
+/* ==========================================
+   HEADER & BOTÃO DE MENU (UNIFICADO)
+   ========================================== */
+
+/* 1. Estilo Base */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--cor-fundo);
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.2em;
+  padding: 0.8em 0.5em 0 0.5em;
+  box-shadow: 1px 1px 1px var(--cor-shadow);
+  border-bottom: 1px solid var(--cor-borda);
+
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-header > img#logo{   
+header > img#logo {   
   height: 25px;
   width: auto;
-  background-color: var(--cor-fundo);
+  background-color: transparent;
   align-self: flex-start;
 }
 
+/* 1. Ajuste no botão do Header (z-index corrigido para não ficar por cima da sidebar) */
 header > .menu-btn {
-  border: none;            /* Remove a borda */
-  background: transparent; /* Remove o fundo cinza */
-  outline: none;           /* Remove a linha de seleção ao clicar */
-  padding: 0;              /* Remove o espaçamento interno padrão */
-  cursor: pointer;         /* Transforma o cursor em mãozinha ao passar o mouse */
-  z-index: 2;
-}
-
-header > .menu-btn >.material-symbols-outlined{
-    background-color: var(--cor-fundo);
-    color: var(--cor3);
-    font-size: 2em;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -260px; /* Escondido à direita da tela */
-  width: 250px;
-  height: 100vh;
-  background-color: var(--cor2);
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
-  transition: right 0.3s ease-in-out;
-  z-index: 1000;
-  padding: 20px;
-}
-
-.sidebar.active {
-  right: 0; /* Desliza para dentro da tela */
-}
-
-/* Estilização básica da lista */
-.sidebar > ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 40px;
-}
-
-.sidebar li {
-  margin: 20px 0;
-}
-
-.sidebar > .close-btn {
-  color: var(--cor6);
   border: none;
   background: transparent;
-  font-size: 28px;
-  float: right;
+  outline: none;
+  padding: 0;
   cursor: pointer;
+  z-index: 995; /* Fica abaixo da sidebar quando ela abre */
 }
 
-.sidebar > .close-btn:active {
-  color: var(--cor5);
+/* Ícone Padrão do Menu */
+header > .menu-btn > .material-symbols-outlined {
+  background-color: transparent;
+  color: var(--cor3);
+  font-size: 2em;
+  transition: color 0.3s ease, transform 0.1s ease;
 }
 
-.sidebar > .close-btn:hover{
-  color: var(--cor5);
+/* 2. Header sobre Seção Escura (Durante a Rolagem) */
+header.header-escuro {
+  background-color: var(--cor6);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.sidebar a{
-    color: var(--cor6);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2em;
-    cursor: pointer;
+header.header-escuro > .menu-btn > .material-symbols-outlined {
+  color: var(--cor4);
 }
 
-.sidebar a:active{
-    color: var(--cor5);
-    text-decoration: none;
+/* 3. Header com o Menu Sidebar ABERTO */
+header.menu-aberto {
+  background-color: #fdfddb00 !important; /* Acompanha o tom do overlay */
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
 }
 
-.sidebar a:hover{
-    color: var(--cor5);
-    text-decoration: none;
+header.menu-aberto > img#logo{
+  visibility: hidden;
 }
 
-.sidebar > .social-links > .instagram{
-    margin-right: 1em;
-}
-
-.sidebar > .social-links > a > .fa-instagram, .fa-whatsapp{
-    font-size: 1.4em;
-}
-
-/* Fundo escurecido */
+/* Camada Escura de Fundo (Overlay) */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   display: none;
-  z-index: 999;
+  z-index: 990; /* Fica ATRÁS do header e da sidebar */
 }
 
 .overlay.active {
   display: block;
+}
+
+/* 2. Sidebar com fundo 100% SÓLIDO e z-index soberano */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--cor9) !important; /* Cor sólida direta (ou ajuste para o hex exato da sua cor sem transparência) */
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1001; /* Fica ACIMA do header e do overlay */
+  padding: 24px 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-logo {
+  max-height: 30px;
+  width: auto;
+}
+
+/* Cabeçalho da Sidebar alinhado com largura garantida */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Força ocupar exatamente o espaço do menu */
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+}
+
+/* Botão de Fechar com respiro interno e sem vazamento */
+.sidebar .close-btn,
+.close-btn {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: #ffffff !important;
+  font-size: 1.8rem; /* Tamanho ajustado para caber perfeitamente */
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px; /* Dá uma margem interna de segurança */
+  margin: 0;
+  margin-right: 20px;
+  flex-shrink: 0; /* Impede que o Flexbox esprema ou empurre o botão */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.sidebar .close-btn:hover,
+.sidebar .close-btn:active,
+.close-btn:hover,
+.close-btn:active {
+  color: var(--cor2) !important;
+  transform: scale(0.9);
+}
+
+/* Lista de Navegação */
+.sidebar > ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 auto 0;
+}
+
+.sidebar li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar a {
+  display: block;
+  color: var(--cor6);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05em;
+  padding: 14px 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:active {
+  color: var(--cor2);
+  transform: translateX(6px);
+}
+
+/* Rodapé do Menu */
+.sidebar-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-contatos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-contatos p {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 1rem;
+  color: var(--cor6);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.95;
+  word-break: break-all;
+}
+
+.sidebar-contatos i {
+  color: var(--cor2);
+  font-size: 1.15rem;
+}
+
+.sidebar .social-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.sidebar .social-links a {
+  padding: 0;
+  transform: none;
+  font-size: 1.8em;
+}
+
+.sidebar .social-links i {
+  font-size: 2.2em;
+  color: var(--cor6);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar .social-links a:hover i {
+  color: var(--cor2);
+  transform: translateY(-3px) scale(1.05);
 }
 
 /*   HOME   */
@@ -329,12 +451,21 @@ section#cards{
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.12);
 }
 
+.cards > .cards-topo > .primeiro-card:active > .fa-computer{
+  color: var(--cor3);
+}
+
+.cards > .cards-topo > .primeiro-card:hover > .fa-computer{
+  color: var(--cor3);
+}
+
 .cards > .cards-topo > .primeiro-card > .titulo-card{
-    color: var(--cor9);
+    color: var(--cor8);
     font-weight: bold;
 }
 
 .cards > .cards-topo > .primeiro-card > .subtitulo-card{
+    color: var(--cor8);
     font-size: .95em;
 }
 
@@ -365,12 +496,21 @@ section#cards{
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.12);
 }
 
+.cards > .cards-topo > .segundo-card:active > .fa-magnifying-glass{
+  color: var(--cor3);
+}
+
+.cards > .cards-topo > .segundo-card:hover > .fa-magnifying-glass{
+  color: var(--cor3);
+}
+
 .cards > .cards-topo > .segundo-card > .titulo-card{
-    color: var(--cor9);
+    color: var(--cor8);
     font-weight: bold;
 }
 
 .cards > .cards-topo > .segundo-card > .subtitulo-card{
+    color: var(--cor8);
     font-size: .95em;
 }
 
@@ -415,12 +555,21 @@ section#cards{
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.12);
 }
 
+.cards > .cards-baixo > .terceiro-card:active > .fa-truck{
+  color: var(--cor3);
+}
+
+.cards > .cards-baixo > .terceiro-card:hover > .fa-truck{
+  color: var(--cor3);
+}
+
 .cards > .cards-baixo > .terceiro-card > .titulo-card{
-    color: var(--cor9);
+    color: var(--cor8);
     font-weight: bold;
 }
 
 .cards > .cards-baixo > .terceiro-card > .subtitulo-card{
+    color: var(--cor8);
     font-size: .95em;
 }
 
@@ -451,12 +600,21 @@ section#cards{
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.12);
 }
 
+.cards > .cards-baixo> .quarto-card:active > .fa-star{
+  color: var(--cor3);
+}
+
+.cards > .cards-baixo > .quarto-card:hover > .fa-star{
+  color: var(--cor3);
+}
+
 .cards > .cards-baixo > .quarto-card > .titulo-card{
-    color: var(--cor9);
+    color: var(--cor8);
     font-weight: bold;
 }
 
 .cards > .cards-baixo > .quarto-card > .subtitulo-card{
+    color: var(--cor8);
     font-size: .95em;
 }
 
@@ -485,7 +643,7 @@ article#nos{
     width: 60vw;
     margin: auto;
     font-family: var(--fonte-destaque);
-    color: var(--cor9);
+    color: var(--cor8);
     font-size: 1.6em;
     border-radius: 10px;
     text-transform: uppercase; /* Transforma o texto em maiúsculo */
@@ -541,10 +699,11 @@ article#nos{
 }
 
 .nos > .quem-somos > .texto-nos > h3 > .slogan{
-    color: var(--cor9);
+    color: var(--cor8);
 }
 
 .nos > .quem-somos > .texto-nos > p{
+    color: var(--cor8);
     font-weight: normal;
 }
 
@@ -580,7 +739,7 @@ article#nos{
    ========================================== */
 .categoria-tabs {
   display: flex;
-  justify-content: flex-start; /* Alinha à esquerda no celular */
+  justify-content: center; /* Alinha à esquerda no celular */
   padding: 0 20px;
   margin: 1.2em 0em;
   gap: 10px;
@@ -662,13 +821,13 @@ article#nos{
 
 .trabalho-card h3 {
   font-size: 1.2rem;
-  color: var(--cor9);
+  color: var(--cor8);
   margin-bottom: 8px;
 }
 
 .trabalho-card p {
   font-size: 0.95rem;
-  color: #666;
+  color: var(--cor-subtitulo);
   line-height: 1.4;
 }
 
@@ -685,15 +844,15 @@ article#nos{
 }
 
 .diferenciais-container {
-  width: 100%;
+  width: 99%;
   max-width: 850px; /* Largura proporcional do card horizontal */
 }
 
 /* Card Principal */
 .card-diferencial-rotativo {
   position: relative;
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  background-color: var(--cor-fundo-diferenciais);
+  border: 1px solid var(--cor-borda);
   border-radius: 16px;
   padding: 28px 32px 20px 32px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
@@ -720,7 +879,7 @@ article#nos{
 .barra-progresso {
   width: 0%;
   height: 100%;
-  background-color: #0b72b9; /* Cor principal de destaque */
+  background-color: var(--cor4); /* Cor principal de destaque */
   transition: width 0.1s linear;
 }
 
@@ -744,8 +903,8 @@ article#nos{
   justify-content: center;
   width: 52px;
   height: 52px;
-  background-color: #e6f2fa;
-  color: #0b72b9;
+  background-color: var(--cor-fundo-diferenciais-i);
+  color: var(--cor5);
   border-radius: 12px;
   flex-shrink: 0;
 }
@@ -754,14 +913,14 @@ article#nos{
   margin: 0 0 6px 0;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--cor8);
 }
 
 .diferencial-texto p {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.5;
-  color: #64748b;
+  color: var(--cor-subtitulo);
 }
 
 /* Pontos Indicadores (Dots) */
@@ -782,7 +941,7 @@ article#nos{
 }
 
 .dot.ativo {
-  background-color: #0b72b9;
+  background-color: var(--cor4);
   width: 20px;
   border-radius: 10px;
 }
@@ -812,7 +971,7 @@ section#tecnologias{
     width: 60vw;
     margin: auto;
     font-family: var(--fonte-destaque);
-    color: var(--cor9);
+    color: var(--cor8);
     font-size: 1.6em;
     text-transform: uppercase; /* Transforma o texto em maiúsculo */
     border-radius: 10px;
@@ -845,7 +1004,7 @@ section#tecnologias{
     border-radius: 10px;
     margin-top: 1.5em;
     padding: .6em;
-    color: var(--cor9);
+    color: var(--cor8);
 }
 
 .tecnologias > .novas-tecnologias > .texto-tec > h3{
@@ -856,8 +1015,8 @@ section#tecnologias{
     text-align: left;
 }
 
-.tecnologias > .novas-tecnologias > .texto-tec > h3 > .text-diferente{
-    color: var(--cor9);
+.tecnologias > .novas-tecnologias > .texto-tec > h3 > .texto-diferente{
+    color: var(--cor8);
 }
 
 .tecnologias > .novas-tecnologias > .texto-tec > p{
@@ -880,7 +1039,7 @@ section#procedimentos{
     margin: auto;
     padding: 3px;
     font-family: var(--fonte-destaque);
-    color: var(--cor9);
+    color: var(--cor8);
     font-size: 1.6em;
     border-radius: 10px;
     text-transform: uppercase; /* Transforma o texto em maiúsculo */
@@ -891,7 +1050,7 @@ section#procedimentos{
 }
 
 .procedimentos > h3{
-    color: #666;
+    color: #585858;
     background-color: var(--cor6);
     margin: auto;
     width: 90vw;

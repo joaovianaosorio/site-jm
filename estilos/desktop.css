@@ -1,21 +1,86 @@
 @charset "UTF-8";
 
 header > .menu-btn, .close-btn {
-display: none;
+    display: none;
+}
+
+header > img{
+    margin-left: .3em;
+}
+
+/* Reseta o menu lateral para virar uma barra horizontal */
+.sidebar {
+    color: var(--cor8);
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-right: 3em;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Esconde o topo (logo/fechar) e o rodapé da sidebar no desktop */
+.sidebar > .sidebar-header,
+.sidebar > .sidebar-footer {
+    display: none;
+}
+
+/* Exibe os links um ao lado do outro */
+.sidebar > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    margin: 0;
+}
+
+.sidebar > ul > li {
+    border-bottom: none; /* Remove a linha divisória do mobile */
+}
+
+.sidebar > ul > li > a {
+    color: #2b2b2b; /* Ou use o tom de cinza escuro da sua logo */
+    padding: 6px 0;
+    position: relative; /* Base para posicionar a linha inferior */
+}
+
+/* Desativa o efeito do mobile de empurrar o texto para a direita */
+.sidebar > ul > li > a:hover,
+.sidebar > ul > li > a:active {
+transform: none;
+}
+
+/* Criando a borda inferior (inicialmente invisível/com largura 0) */
+.sidebar > ul > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--cor2); /* Cor da borda ao passar o mouse */
+    transition: width 0.3s ease-in-out;
+}
+
+/* Expande a borda ao passar o mouse (Hover) */
+.sidebar > ul > li > a:hover::after {
+    width: 100%;
 }
 
 .categoria-tabs {
-display: flex;
-justify-content: center; /* Centralizado por padrão (Desktop) */
-gap: 10px;
+    display: flex;
+    justify-content: center; /* Centralizado por padrão (Desktop) */
+    gap: 10px;
 }
 
 .carrossel-wrapper{
-max-width: 1200px;
+    max-width: 1200px;
 } 
 
 .trabalho-card{
-flex: 0 0 300px;
+    flex: 0 0 300px;
 }
 
 .btn-carrossel{

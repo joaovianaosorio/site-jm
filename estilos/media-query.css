@@ -1,1 +1,12 @@
 @charset "UTF-8";
+
+@media (max-width: 390px) {
+
+    .home{
+        font-size: .9em;
+    }
+
+    .cards > .cards-topo, .cards-baixo{
+        font-size: .95em;
+    }
+}

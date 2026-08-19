@@ -18,24 +18,45 @@
         <button id="menu-btn" class="menu-btn" aria-label="Abrir Menu">
                 <span id="burger" class="material-symbols-outlined">menu</span>
         </button>
+           <!-- Menu Lateral -->
+        <nav id="sidebar" class="sidebar">
+        
+            <!-- Cabeçalho do Menu: Logo + Botão Fechar -->
+            <div class="sidebar-header">
+                <img src="sua-logo-branca.png" alt="Logo Laboratório" class="sidebar-logo">
+                <button id="close-btn" class="close-btn" aria-label="Fechar menu">&times;</button>
+            </div>
+
+            <!-- Links de Navegação -->
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <!-- Bloco Inferior: Contatos e Redes Sociais -->
+            <div class="sidebar-footer">
+                
+                <!-- Telefone e E-mail em Texto -->
+                <div class="sidebar-contatos">
+                    <p><i class="fa-solid fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fa-solid fa-envelope"></i> contato@jmsolucoes.com.br</p>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jmsolucoesproteticas/" target="_blank" rel="noopener" aria-label="Instagram" class="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5511995591704?text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos.%20" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+        </nav>
     </header>         
-    <nav id="sidebar" class="sidebar">
-        <button id="close-btn" class="close-btn">&times;</button>
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-        <div class="social-links">
-            <a href="https://www.instagram.com/jmsolucoesproteticas/" target="_blank" rel="noopener" aria-label="Instagram" class="instagram">
-                <i class="fa-brands fa-instagram"></i> 
-            </a>
-            <a href="https://wa.me/message/56S2XLPK5G65A1" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-        </div>
-    </nav>
     <div id="overlay" class="overlay"></div>
     <main>
         <section id="home" class="home">
@@ -47,7 +68,7 @@
                     <p>Excelência em cada detalhe, combinando tecnologia digital de ponta e artesania humana para resultados estéticos superiores.</p>
                 </div>
                 <div id="cta" class="cta">
-                    <a href="https://wa.me/message/56S2XLPK5G65A1">Solicitar Orçamento<i class="fa-brands fa-whatsapp" id="icone"></i></a>
+                    <a href="https://wa.me/5511995591704?text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos.%20">Solicitar Orçamento<i class="fa-brands fa-whatsapp" id="icone"></i></a>
                 </div>
             </div>
             <div id="imagem" class="imagem">
@@ -63,7 +84,7 @@
                 <p><span class="tempo-anos">10+ ANOS</span> DE EXPERIÊNCIA</p>
             </div>
         </section>
-        <section id="cards" class="cards">
+        <section id="cards" class="cards secao-escura">
             <div id="cards-topo" class="cards-topo">
                 <div class="primeiro-card">
                     <i class="fa-solid fa-computer"></i>
@@ -73,7 +94,7 @@
                 <div class="segundo-card">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <p class="titulo-card">Precisão & Experiência</p>
-                    <p class="subtitulo-car">Combinação de anos de experiência artesanal com tecnologia de ponta.</p>
+                    <p class="subtitulo-card">Combinação de anos de experiência artesanal com tecnologia de ponta.</p>
                 </div>
             </div>
             <div id="cards-baixo" class="cards-baixo">
@@ -89,7 +110,7 @@
                 </div>
             </div>
         </section>
-        <article id="nos" class="nos">
+        <article id="nos" class="nos secao-escura">
             <h2>Quem <span class="somos">somos?</span></h2>
             <div class="quem-somos">
                 <img src="imagens/protetico.jpg" alt="quem-somos">
@@ -203,15 +224,15 @@
             <h2>Novas <span class="tecnologia">tecnologias!</span></h2>
             <div class="novas-tecnologias">
                 <img src="imagens/protetico.jpg" alt="quem-somos">
-                <div class="texto-tec">
+                <div class="texto-tec secao-escura">
                     <h3>JM Soluções Protéticas, <span class="texto-diferente">o sorriso dos seus pacientes é aqui!</span></h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, fuga quos dignissimos sit sint optio totam eum, vero error officiis accusantium qui tempora libero culpa esse beatae porro ipsa aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid vero ullam obcaecati et adipisci expedita nulla autem voluptas ipsum repellat illum, at fugit culpa quaerat, neque officiis cumque! Impedit, maxime! Lorem ipsum, dolor sit amet consectetur adipisicing elit. A vel illum nam neque ut expedita, blanditiis nulla impedit reprehenderit consequuntur veritatis consectetur libero adipisci aperiam ab quo numquam ex deleniti!</p>
                 </div>
             </div>
         </section>
-        <section class="procedimentos" id="procedimentos">
+        <section class="procedimentos secao-escura" id="procedimentos">
             <h2><span class="destaque">Da Bancada</span> à Clínica</h2>
-            <h3>Resultados clínicos reais que combinam adaptação marginal perfeita e estética natural.</h3>
+            <h3>Clique nas imagens e veja resultados clínicos reais que combinam adaptação marginal perfeita e estética natural.</h3>
             <div class="cards-procedimentos">
                 <div class="card-antes-depois">
                     <div class="card-inner">
