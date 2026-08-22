@@ -28,7 +28,7 @@
 
             <!-- Cabeçalho do Menu: Logo + Botão Fechar -->
             <div class="sidebar-header">
-                <img src="sua-logo-branca.png" alt="Logo Laboratório" class="sidebar-logo">
+                <img src="imagens/logo-vetorizada.png" alt="Logo Laboratório" class="sidebar-logo">
                 <button id="close-btn" class="close-btn" aria-label="Fechar menu">&times;</button>
             </div>
 
@@ -37,6 +37,7 @@
                 <li><a href="#home">Início</a></li>
                 <li><a href="#nos">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#logistica">Logística</a></li>
                 <li><a href="#procedimentos">Resultados</a></li>
                 <li><a href="#feedback">Feedbacks</a></li>
                 <li><a href="#rodape-site">Contato</a></li>
@@ -47,8 +48,8 @@
 
                 <!-- Telefone e E-mail em Texto -->
                 <div class="sidebar-contatos">
-                    <p><i class="fa-solid fa-phone"></i> (11) 99999-9999</p>
-                    <p><i class="fa-solid fa-envelope"></i> contato@jmsolucoes.com.br</p>
+                    <p><i class="fa-solid fa-phone"></i> (11) 99559-1704 </p>
+                    <p><i class="fa-solid fa-envelope"></i><span class="email"> jmsolucoesproteticas@outlook.com </span></p>
                 </div>
 
                 <!-- Redes Sociais -->
@@ -87,6 +88,11 @@
                 <img src="imagens/fundo-home.png" alt="" height="700px" class="fundo">
             </div>
         </section>
+        <div class="whats">
+            <a href="https://wa.me/5511995591704" class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+                <i class="fa-brands fa-whatsapp" style="color: white; height: 25px; width: auto;"></i>
+          </a>
+        </div>
         <section id="metricas" class="metricas">
             <div class="casos">
                 <p>MAIS DE <span class="num-casos">30 MIL CASOS</span> SOLUCIONADOS</p>
@@ -143,6 +149,7 @@
         </article>
         <section id="servicos" class="servicos">
             <h2>Nossas <span class="destaque-pt">próteses!</span></h2>
+            <h3>Soluções protéticas de alta precisão para dar suporte a todos os seus casos clínicos.</h3>
             <!-- ADICIONE ESTE BLOCO DE ABAS AQUI -->
             <div class="categoria-tabs">
                 <button class="tab-btn active" data-categoria="principais">Principais</button>
@@ -213,6 +220,12 @@
                     <i class="fa-solid fa-circle-chevron-right"></i>
                 </button>
             </div>
+            <div class="cta-procurava">
+                <p>Não encontrou o trabalho ou especificação que procurava?</p>
+                <a href="https://wa.me/5511995591704?text=Ol%C3%A1!%20Procuro%20um%20trabalho%20espec%C3%ADfico%20de%20pr%C3%B3tese." target="_blank" class="btn-cta-procurava">
+                  <i class="fa-brands fa-whatsapp"></i> Fale conosco no WhatsApp
+                </a>
+            </div>
             <section class="secao-diferenciais">
                 <div class="diferenciais-container">
 
@@ -246,6 +259,74 @@
 
                 </div>
             </section>
+        </section>
+        <section class="logistica" id="logistica">
+            <div class="logistica-header">
+              <h2>Logística Própria <span>& Coletas</span></h2>
+              <p>Retirada e entrega diretamente no seu consultório, com total segurança e sem custo de frete.</p>
+            </div>
+        
+            <div class="logistica-wrapper">
+              
+              <!-- 1. BLOCO DE TEXTO COM AS ROTAS -->
+              <div class="logistica-conteudo">
+                
+                <!-- São Paulo -->
+                <div class="rota-card">
+                  <div class="rota-icone">
+                    <i class="fa-solid fa-truck-fast"></i>
+                  </div>
+                  <div class="rota-info">
+                    <h3>São Paulo & Região</h3>
+                    <span class="frequencia"><i class="fa-regular fa-calendar-check"></i> 3x por semana</span>
+                    <p>Atendimento rápido e contínuo para a capital e grande São Paulo. Coletamos seus moldes e entregamos os trabalhos acabados com agilidade.</p>
+                  </div>
+                </div>
+        
+                <!-- Eixo Bragantino & Sul de Minas -->
+                <div class="rota-card">
+                  <div class="rota-icone">
+                    <i class="fa-solid fa-route"></i>
+                  </div>
+                  <div class="rota-info">
+                    <h3>Eixo Bragantino & Sul de Minas</h3>
+                    <span class="frequencia"><i class="fa-regular fa-calendar-check"></i> até 2x por semana</span>
+                    <p>Rota semanal dedicada cobrindo toda a região com transporte próprio, evitando os riscos e custos de envio por Correios/Sedex.</p>
+                    <p class="cidades"><strong>Cidades atendidas:</strong> Mairiporã, Atibaia, Bragança Paulista e cidades do Sul de Minas.</p>
+                  </div>
+                </div>
+        
+                <!-- Vale do Paraíba -->
+                <div class="rota-card">
+                  <div class="rota-icone">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div class="rota-info">
+                    <h3>Vale do Paraíba</h3>
+                    <span class="frequencia"><i class="fa-regular fa-calendar-check"></i> 1x por semana</span>
+                    <p>Coleta e entrega programada para garantir previsibilidade nas suas consultas e pontualidade na entrega dos casos clínicos.</p>
+                  </div>
+                </div>
+        
+              </div>
+        
+              <div class="mapa-container" id="mapaContainer">
+                <!-- Mapa de Satélite Realista (Fonte: Wikimedia Commons - Domínio Público) -->
+                <img 
+                  src="imagens/mapa-brasil.png" 
+                  alt="Mapa Satélite do Brasil" 
+                  class="mapa-satelite"
+                />
+              
+                <!-- Ponto pulsante fixo em São Paulo -->
+                <div class="ponto-sp-real" title="Sede - São Paulo"></div>
+              
+                <div class="aviaozinho-flutuante">
+                    <i class="fa-solid fa-truck"></i>
+                  </div>
+              </div>
+        
+            </div>
         </section>
         <section id="tecnologias" class="tecnologias">
             <h2>Novas <span class="tecnologia">tecnologias!</span></h2>
@@ -536,6 +617,7 @@
                     <li><a href="#home">Início</a></li>
                     <li><a href="#nos">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#logistica">Logística</a></li>
                     <li><a href="#procedimentos">Resultados</a></li>
                     <li><a href="#feedback">Feedbacks</a></li>
                 </ul>
@@ -567,7 +649,7 @@
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                         </svg>
-                        Itaim Paulis - São Paulo / SP
+                        Itaim Paulista - São Paulo / SP
                     </li>
                 </ul>
             </div>

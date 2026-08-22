@@ -127,6 +127,27 @@ transform: none;
     width: auto;
 }
 
+.cta-procurava{
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+}
+
+.logistica-wrapper {
+    flex-direction: row; /* Coloca texto na esquerda e mapa na direita */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logistica-conteudo {
+    flex: 1;
+  }
+
+  .mapa-container {
+    flex: 0 0 380px;
+    height: 380px; /* Garante a proporção perfeita do mapa satélite no desktop */
+  }
+
 section#procedimentos{
     background-position: center -20em;
 }

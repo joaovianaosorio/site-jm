@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500&display=swap');
 
 * {
     padding: 0px;
@@ -21,18 +22,18 @@
     --cor8: #171717;
     --cor9: #b69021;
     --cor10: #fff7de3f;
-
+    --cor-sidebar: #755d16;
 
     --cor-shadow: #3b3b3b41;
     --cor-borda: #3b3b3b1f;
-     --cor-subtitulo: #171717af;
+    --cor-subtitulo: #171717af;
 
-    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
-    --fonte-destaque: 'Inter', sans-serif;  
+    --fonte-padrao: 'Inter', sans-serif;  
+    --fonte-titulo: 'Montserrat', sans-serif;
 }
 
 body, html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif !important;
   background-color: var(--cor-fundo);
   color: var(--cor8);
   width: 100%;
@@ -137,7 +138,7 @@ header.menu-aberto > img#logo{
   right: -320px;
   width: 300px;
   height: 100vh;
-  background-color: var(--cor9) !important; /* Cor sólida direta (ou ajuste para o hex exato da sua cor sem transparência) */
+  background-color: var(--cor-sidebar) !important; /* Cor sólida direta (ou ajuste para o hex exato da sua cor sem transparência) */
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
   transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1001; /* Fica ACIMA do header e do overlay */
@@ -242,6 +243,7 @@ header.menu-aberto > img#logo{
 }
 
 .sidebar-contatos p {
+  font-family: var(--fonte-padrao);
   margin: 0;
   padding-bottom: 10px;
   font-size: 1rem;
@@ -251,6 +253,10 @@ header.menu-aberto > img#logo{
   gap: 10px;
   opacity: 0.95;
   word-break: break-all;
+}
+
+.sidebar-contatos p > .email{
+  font-size: .9em;
 }
 
 .sidebar-contatos i {
@@ -304,10 +310,12 @@ header.menu-aberto > img#logo{
 
 .home > .texto > .titulo{
     text-align: left;
-    font-family: var(--fonte-destaque);
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    letter-spacing: -0.5px; /* Deixa o título imponente e bem ajustado */
+    text-transform: uppercase;
     margin-top: 1.4em;
     margin-left: .8em;
-    text-transform: uppercase;
 }
 
 .home > .texto > .titulo > h1 > .destaque{
@@ -371,6 +379,42 @@ header.menu-aberto > img#logo{
     padding-top: 8em;
     object-fit: contain;
     transform: translateX(10%); /* Ajuste fino de sangria para a direita */
+  }
+
+  /* WHATSAPP */
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    /* Remove o destaque cinza padrão ao tocar no celular */
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+  
+  .whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+  }
+
+  /* Muda de cor e encolhe LIGEIRAMENTE APENAS ENQUANTO ESTIVER SENDO CLICADO/PRESSIONADO */
+  .whatsapp-float:active,
+  .whatsapp-float:focus:not(:focus-visible) {
+    background-color: #128c7e !important; /* Cor que aparece só no clique */
+    transform: scale(0.92);
   }
 
   /*  METRICAS   */
@@ -654,14 +698,16 @@ article#nos{
 
 .nos > h2{
     background-color: var(--cor6);
-    width: 70%;
-    max-width: 400px;
+    width: 55%;
     margin: auto;
-    font-family: var(--fonte-destaque);
+    padding: 5px;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    letter-spacing: -0.5px; /* Deixa o título imponente e bem ajustado */
+    text-transform: uppercase;
     color: var(--cor8);
     font-size: 1.6em;
     border-radius: 10px;
-    text-transform: uppercase; /* Transforma o texto em maiúsculo */
 }
 
 .nos > h2 > .somos{
@@ -736,11 +782,19 @@ article#nos{
     font-family: var(--fonte-destaque);
     font-size: 1.6em;
     text-align: center;
-    text-transform: uppercase; /* Transforma o texto em maiúsculo */
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    letter-spacing: -0.5px; /* Deixa o título imponente e bem ajustado */
+    text-transform: uppercase;
 }
 
 .servicos > h2 > .destaque-pt{
    color: var(--cor4);
+}
+
+.servicos > h3{
+  text-align: center;
+  color: rgb(83, 83, 83);
 }
 
 .servicos > .carrossel-wrapper {
@@ -848,6 +902,47 @@ article#nos{
 
 .servicos > .carrossel-wrapper > .btn-carrossel{
     display: none;
+}
+
+/* BOTÃO APÓS CARROSSEL*/
+
+/* Container da Frase de Chamada */
+.cta-procurava {
+  text-align: center;
+  margin: 25px auto 35px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-procurava p {
+  font-family: var(--fonte-padrao);
+  font-size: 0.95rem;
+  color: var(--cor8);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Botão de Ação */
+.btn-cta-procurava {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--cor9); /* Usa a cor dourada/principal do seu site */
+  color: var(--cor-fundo-diferenciais);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-cta-procurava:active {
+  transform: scale(0.96);
 }
 
 /* Container da Seção Cards abaixo do Carrossel */
@@ -970,6 +1065,248 @@ article#nos{
   }
 }
 
+/*    LOGÍSTICA    */
+.logistica{
+  margin: 2em auto;
+  padding-top: 3em;
+  padding-right:1em;
+  padding-bottom: 4.5em;
+  padding-left: 1em;
+  border-bottom: 1px solid #3b3b3b1f;;
+  box-shadow: 1px 1px 1px #3b3b3b41;
+  border-bottom: 1px solid #3b3b3b1f;
+}
+
+.logistica-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.logistica-header h2 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logistica-header h2 span {
+  color: var(--cor9, #927518); /* Cor principal/dourado do seu site */
+}
+
+.logistica-header p {
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Estrutura Flexbox: Mobile (Coluna) -> Desktop (Lado a Lado) */
+.logistica-wrapper {
+  display: flex;
+  flex-direction: column; /* Padrão Mobile: Texto primeiro, Animação depois */
+  gap: 30px;
+  align-items: center;
+}
+
+/* ==========================================
+   BLOCO DE TEXTO E ROTAS
+   ========================================== */
+.logistica-conteudo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rota-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid var(--cor9, #927518);
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.rota-card:hover {
+  transform: translateY(-2px);
+}
+
+.rota-icone {
+  background-color: #fdfdef;
+  color: var(--cor9, #927518);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.rota-info h3 {
+  font-size: 1.1rem;
+  color: #222222;
+  margin-bottom: 4px;
+}
+
+.rota-info .frequencia {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cor9, #927518);
+  background-color: #fdf8e6;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.rota-info p {
+  font-size: 0.9rem;
+  color: #555555;
+  line-height: 1.4;
+}
+
+.rota-info .cidades {
+  font-size: 0.85rem;
+  color: #777777;
+  margin-top: 6px;
+}
+
+/* ==========================================
+   ANIMAÇÃO DO MAPA E AVIÃOZINHO (SVG + CSS)
+   ========================================== */
+.mapa-container {
+  width: 100%;
+  max-width: 380px;
+  height: 320px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mapa-container {
+  width: 100%;
+  max-width: 380px;
+  height: 380px;
+  position: relative;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Imagem do mapa em alta definição */
+.mapa-satelite {
+  width: 90%;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+/* Indicador de São Paulo */
+.ponto-sp-real {
+  position: absolute;
+  top: 67%;
+  left: 62%;
+  width: 12px;
+  height: 12px;
+  background-color: var(--cor9, #f2cf1d);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(242, 207, 29, 0.8);
+  animation: pulsoSP 1.8s infinite;
+  z-index: 2;
+}
+
+@keyframes pulsoSP {
+  0% { box-shadow: 0 0 0 0 rgba(242, 207, 29, 0.8); }
+  70% { box-shadow: 0 0 0 14px rgba(242, 207, 29, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(242, 207, 29, 0); }
+}
+
+/* Avião com rota nacional completa */
+.aviaozinho-flutuante {
+  position: absolute;
+  color: var(--cor9, #927518);
+  font-size: 1.3rem;
+  z-index: 3;
+  filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.4));
+  /* Aumento do tempo para 22s permitindo visualizar cada estado */
+  animation: rotaNacional 22s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+/* Rota com espaçamentos proporcionais entre todas as paradas */
+@keyframes rotaNacional {
+  /* 1. SÃO PAULO */
+  0%, 3% {
+    top: 68%;
+    left: 60%;
+  }
+
+  /* 2. BAHIA */
+  12%, 15% {
+    top: 45%;
+    left: 72%;
+  }
+
+  /* 3. AMAZONAS */
+  24%, 27% {
+    top: 22%;
+    left: 30%;
+  }
+
+  /* 4. SANTA CATARINA */
+  36%, 39% {
+    top: 80%;
+    left: 55%;
+  }
+
+  /* 5. ACRE */
+  48%, 51% {
+    top: 32%;
+    left: 10%;
+  }
+
+  /* 6. MINAS GERAIS */
+  60%, 63% {
+    top: 58%;
+    left: 66%;
+  }
+
+  /* 7. RONDÔNIA */
+  72%, 75% {
+    top: 35%;
+    left: 22%;
+  }
+
+  /* 8. MATO GROSSO */
+  81%, 84% {
+    top: 48%;
+    left: 42%;
+  }
+
+  /* 9. AMAPÁ */
+  89%, 91% {
+    top: 10%;
+    left: 52%;
+  }
+
+  /* 10. RETORNO A SÃO PAULO (Agora com 7% de intervalo para a viagem longa) */
+  98%, 100% {
+    top: 68%;
+    left: 60%;
+  }
+}
+
 /*    NOVAS TECNOLOGIAS    */
 
 section#tecnologias{
@@ -1054,7 +1391,7 @@ section#procedimentos{
     width: 85%;
     max-width: 500px;
     margin: auto;
-    padding: 3px;
+    padding: 5px;
     font-family: var(--fonte-destaque);
     color: var(--cor8);
     font-size: 1.6em;

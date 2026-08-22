@@ -206,10 +206,34 @@ if (cardElemento) {
 }
 
 // ==========================================
-// 7. CARDS ANTES E DEPOIS
+// 8. CARDS ANTES E DEPOIS
 // ==========================================
 document.querySelectorAll('.card-antes-depois').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('virado');
+  });
+});
+
+// ==========================================
+// 9. SUAVIDADE DE ROLAGEM
+// ==========================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      const headerHeight = 80; // Altura do seu header em pixels
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   });
 });
