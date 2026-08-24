@@ -27,6 +27,7 @@
     --cor-shadow: #3b3b3b41;
     --cor-borda: #3b3b3b1f;
     --cor-subtitulo: #171717af;
+    --cor-subtitulo2: #777777;
 
     --fonte-padrao: 'Inter', sans-serif;  
     --fonte-titulo: 'Montserrat', sans-serif;
@@ -780,12 +781,10 @@ article#nos{
 
 .servicos > h2{
     font-family: var(--fonte-destaque);
-    font-size: 1.6em;
+    font-size: 1.8em;
     text-align: center;
     font-family: var(--fonte-titulo);
     font-weight: 700;
-    letter-spacing: -0.5px; /* Deixa o título imponente e bem ajustado */
-    text-transform: uppercase;
 }
 
 .servicos > h2 > .destaque-pt{
@@ -794,7 +793,11 @@ article#nos{
 
 .servicos > h3{
   text-align: center;
-  color: rgb(83, 83, 83);
+  color: var(--cor-subtitulo2);
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 25px;
 }
 
 .servicos > .carrossel-wrapper {
@@ -870,7 +873,7 @@ article#nos{
   flex: 0 0 80vw; /* Card espião no mobile */
   scroll-snap-align: center;    /* Centraliza o card ativo ao parar de arrastar */
   
-  background: #fdfdef;
+  background-color: var(--cor-fundo-diferenciais);
   border-radius: 16px;
   padding: 16px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.16);
@@ -1083,11 +1086,11 @@ article#nos{
 }
 
 .logistica-header h2 {
+  font-family: var(--fonte-titulo);
   font-size: 1.8rem;
+  font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .logistica-header h2 span {
@@ -1096,7 +1099,7 @@ article#nos{
 
 .logistica-header p {
   font-size: 1rem;
-  color: #666666;
+  color: var(--cor-subtitulo2);
 }
 
 /* Estrutura Flexbox: Mobile (Coluna) -> Desktop (Lado a Lado) */
@@ -1323,15 +1326,27 @@ section#tecnologias{
     width: 70%;
     max-width: 400px;
     margin: auto;
-    font-family: var(--fonte-destaque);
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: 700;
     color: var(--cor8);
-    font-size: 1.6em;
-    text-transform: uppercase; /* Transforma o texto em maiúsculo */
     border-radius: 10px;
 }
 
 .tecnologias > h2 > .tecnologia{
     color: var(--cor4);
+}
+
+.tecnologias > h3{
+  text-align: center;
+  color: var(--cor-subtitulo2);
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-right: auto;
+  margin-bottom: 25px;
+  margin-left: auto;
+  width: 90%;
 }
 
 .tecnologias > .novas-tecnologias{
@@ -1392,11 +1407,11 @@ section#procedimentos{
     max-width: 500px;
     margin: auto;
     padding: 5px;
-    font-family: var(--fonte-destaque);
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: 700;
     color: var(--cor8);
-    font-size: 1.6em;
     border-radius: 10px;
-    text-transform: uppercase; /* Transforma o texto em maiúsculo */
 }
 
 .procedimentos > h2 > .destaque{
@@ -1404,7 +1419,8 @@ section#procedimentos{
 }
 
 .procedimentos > h3{
-    color: #585858;
+  font-weight: 400;
+    color: var(--cor-subtitulo2);
     background-color: var(--cor6);
     margin: auto;
     width: 90%;
@@ -1445,7 +1461,7 @@ section#procedimentos > .cards-procedimentos{
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  background-color: #ffffff;
+  background-color: rgb(249, 249, 249);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
@@ -1465,7 +1481,7 @@ section#procedimentos > .cards-procedimentos{
   z-index: 1;
   transform: scaleX(0);
   opacity: 0;
-  background-color: #fdfddb;
+  background-color: var(--cor-fundo); /*fdfddb*/
 }
 
 /* --- TROCA NO DESKTOP (Passar o Mouse) --- */
@@ -1515,14 +1531,14 @@ section#procedimentos > .cards-procedimentos{
 .card-info h3 {
   margin: 0 0 6px 0;
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: var(--cor8);
   text-transform: uppercase;
 }
 
 .card-info p {
   margin: 0;
   font-size: 0.88rem;
-  color: #666666;
+  color: var(--cor-subtitulo2);
   line-height: 1.4;
 }
 
@@ -1588,7 +1604,7 @@ section#procedimentos > .cards-procedimentos{
   background-color: #f8f9fa; /* Fundo cinza bem suave */
   padding: 80px 20px;
   color: #2b2b2b;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--fonte-padrao);
 }
 
 .depoimentos-container {
@@ -1600,7 +1616,7 @@ section#procedimentos > .cards-procedimentos{
 /* Tag de destaque no topo */
 .depoimentos-tag {
   display: inline-block;
-  font-size: .82rem;
+  font-size: .75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -1612,16 +1628,21 @@ section#procedimentos > .cards-procedimentos{
 }
 
 .depoimentos-container h2 {
-  font-size: 2.2rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 10px 0;
+  color: var(--cor8);
+  margin-bottom: 10px;
+  margin: auto;
+  width: 95%;
 }
 
 .depoimentos-subtitulo {
+  font-family: var(--fonte-padrao);
   font-size: 1.05rem;
+  font-weight: 400;
   color: var(--cor-subtitulo);
-  max-width: 600px;
+  width: 93%;
   margin: 0 auto 48px auto;
   line-height: 1.5;
 }
@@ -1705,7 +1726,7 @@ section#procedimentos > .cards-procedimentos{
 .autor-info h5 {
   display: block;
   font-size: 0.82rem;
-  color: #777777;
+  color: var(--cor-subtitulo2);
   margin-top: 3px;
 }
 
@@ -1714,7 +1735,6 @@ section#procedimentos > .cards-procedimentos{
   padding: 3em 1.3em;
   background-color: var(--cor-fundo);
   overflow: hidden;
-  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .instagram-container {
@@ -1729,7 +1749,7 @@ section#procedimentos > .cards-procedimentos{
 /* Lado Esquerdo - Texto */
 .instagram-tag {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -1741,11 +1761,13 @@ section#procedimentos > .cards-procedimentos{
 }
 
 .instagram-texto h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--cor8);
   margin: 0 0 16px 0;
   line-height: 1.25;
+  width: 95%;
 }
 
 .instagram-texto p {

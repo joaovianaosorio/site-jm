@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+header{
+    height: 3.3em;
+    align-items: center;
+}
+
+.sidebar {
+    margin-bottom: .7em;
+}
+
+
 header > .menu-btn, .close-btn {
     display: none;
 }
@@ -50,6 +60,7 @@ header > img{
 .sidebar > ul > li > a:hover,
 .sidebar > ul > li > a:active {
 transform: none;
+color: var(--cor5);
 }
 
 /* Criando a borda inferior (inicialmente invisível/com largura 0) */
@@ -60,7 +71,7 @@ transform: none;
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: var(--cor2); /* Cor da borda ao passar o mouse */
+    background-color: var(--cor5); /* Cor da borda ao passar o mouse */
     transition: width 0.3s ease-in-out;
 }
 
@@ -125,6 +136,46 @@ transform: none;
 .fa-circle-chevron-right{
     height: 2em;
     width: auto;
+}
+
+
+.trabalho-card {transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+/* 3. EFEITO HOVER (Ao passar o mouse) */
+.trabalho-card:hover {
+  transform: scale(1.05); /* Aumenta o card inteiro em 5% */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  z-index: 10; /* Faz ele ficar por cima dos outros cards */
+}
+
+/* Efeito Hover na Imagem */
+.trabalho-card:hover .card-imagem-container {
+  transform: scale(1.1); /* Dá um zoom extra na imagem */
+}
+
+/* Efeito de Zoom na foto ao passar o mouse */
+.trabalho-card:hover .card-imagem-container img {
+  height: 300px;
+  transform: scale(1.08); /* Zoom de 8% na foto */
+}
+
+.trabalho-card:active {
+  transform: translateY(-2px) scale(0.99); /* Afunda levemente para dar sensação de clique */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.trabalho-card .card-imagem-container {
+  width: 100%;
+  height: 180px; /* Ajuste para a altura do seu layout */
+  border-radius: 12px;
+  overflow: hidden; /* O SEGREDO: recorta o zoom da foto nas bordas */
+  transition: height 0.3s ease-in-out;
+}
+
+.trabalho-card img{
+transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .cta-procurava{
