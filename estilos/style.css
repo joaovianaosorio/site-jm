@@ -1713,23 +1713,18 @@ section#procedimentos > .cards-procedimentos{
 
 /* 3. Estiliza a instrução visual com contraste forte e texto Mobile */
 .instrucao-card {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--cor8); /* Cor com boa leitura */
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 4px;
-}
-
-.instrucao-card i {
-  color: var(--cor5); /* Destaque no ícone */
-  font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--cor8);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
 }
 
 /* Texto automático para MOBILE */
 .instrucao-card::after {
-  content: "Clique para ver o resultado";
+    content: "Clique para ver o resultado";
 }
 
 /*    ONDAS E EFEITOS   */

@@ -9,7 +9,6 @@ header{
     margin-bottom: .7em;
 }
 
-
 header > .menu-btn, .close-btn {
     display: none;
 }
@@ -20,6 +19,7 @@ header > img{
 
 /* Reseta o menu lateral para virar uma barra horizontal */
 .sidebar {
+    font-family: var(--fonte-titulo);
     color: var(--cor8);
     position: static;
     width: auto;
@@ -27,7 +27,7 @@ header > img{
     background-color: transparent !important;
     box-shadow: none;
     padding: 0;
-    margin-right: 3em;
+    margin-right: 1.5em;
     flex-direction: row;
     align-items: center;
 }
@@ -226,9 +226,9 @@ section#procedimentos > .cards-procedimentos {
   }
 
   /* Troca o texto para DESKTOP */
-  .instrucao-card::after {
-    content: "Passe o mouse para ver o resultado";
-  }
+    .instrucao-card::after {
+        content: "Passe o mouse para ver o resultado";
+    }
 
   .onda-animada {
   height: 180px;}
