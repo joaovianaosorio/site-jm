@@ -211,6 +211,20 @@ if (cardElemento) {
 }
 
 // ==========================================
+// FUNÇÃO PARA TROCA MANUAL (AO CLICAR NO DOT)
+// ==========================================
+function mudarCardManual(index) {
+  // 1. Atualiza o índice do slide atual
+  indiceAtual = index;
+
+  // 2. Renderiza o card e altera a classe 'ativo' do dot selecionado
+  renderizarCard(indiceAtual);
+
+  // 3. Reinicia a barra de progresso do zero para começar a contar os 5 segundos novamente
+  iniciarCiclo();
+}
+
+// ==========================================
 // 8. CARDS ANTES E DEPOIS
 // ==========================================
 document.querySelectorAll('.card-antes-depois').forEach(card => {
@@ -249,57 +263,71 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ANIMAÇÃO MÉTRICAS
 
-// Seleciona a seção das métricas
 const secaoMetricas = document.getElementById("metricas");
 
-// Cria o observador para detectar quando você rola até a seção
 const observadorMetricas = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
-    // Quando a seção entra na tela
     if (entry.isIntersecting) {
-      secaoMetricas.classList.add("animar"); // Adiciona a classe que ativa o CSS
-      observer.unobserve(entry.target);     // Para de observar para rodar só uma vez
+      secaoMetricas.classList.add("animar");
+      observer.unobserve(entry.target); // Roda só uma vez
     }
   });
 }, {
-  threshold: 0.3 // Dispara a animação quando 30% da faixa estiver visível
+  threshold: 1.0 // 1.0 = Dispara APENAS quando 100% da seção estiver visível na tela
 });
 
-// Ativa a observação se o elemento existir
 if (secaoMetricas) {
   observadorMetricas.observe(secaoMetricas);
 }
 
 // ANIMAÇÃO CARDS
-
 document.addEventListener("DOMContentLoaded", () => {
-  let executado = false;
+  let executadoTopo = false;
+  let executadoBaixo = false;
 
-  function verificarVisualizacaoTexto() {
-    if (executado) return;
+  function verificarVisualizacaoCards() {
+    const alturaJanela = window.innerHeight || document.documentElement.clientHeight;
 
-    // Seleciona o elemento de texto inferior da segunda linha de cards
-    const textoReferencia = document.querySelector("#cards-baixo .quarto-card .subtitulo-card");
-    const caminhao = document.querySelector(".cards .fa-truck");
-    const estrela = document.querySelector(".cards .fa-star");
+    // --- CARDS DO TOPO (PC e Lupa) ---
+    if (!executadoTopo) {
+      const refTopo = document.querySelector("#cards-topo .segundo-card .subtitulo-card");
+      const primeiroCard = document.querySelector(".primeiro-card");
+      const segundoCard = document.querySelector(".segundo-card");
 
-    if (textoReferencia && caminhao && estrela) {
-      const rect = textoReferencia.getBoundingClientRect();
-      const alturaJanela = window.innerHeight || document.documentElement.clientHeight;
-
-      // Dispara somente quando a linha de texto entrar no campo de visão (com folga de 50px)
-      if (rect.top <= alturaJanela - 50 && rect.bottom >= 0) {
-        caminhao.classList.add("animar-icone");
-        estrela.classList.add("animar-icone");
-
-        executado = true;
-        window.removeEventListener("scroll", verificarVisualizacaoTexto);
+      if (refTopo && primeiroCard && segundoCard) {
+        const rectTopo = refTopo.getBoundingClientRect();
+        if (rectTopo.top <= alturaJanela - 50 && rectTopo.bottom >= 0) {
+          primeiroCard.classList.add("animar-icone");
+          segundoCard.classList.add("animar-icone");
+          executadoTopo = true;
+        }
       }
+    }
+
+    // --- CARDS DE BAIXO (Caminhão e Estrela) ---
+    if (!executadoBaixo) {
+      const refBaixo = document.querySelector("#cards-baixo .quarto-card .subtitulo-card");
+      const terceiroCard = document.querySelector(".terceiro-card");
+      const quartoCard = document.querySelector(".quarto-card");
+
+      if (refBaixo && terceiroCard && quartoCard) {
+        const rectBaixo = refBaixo.getBoundingClientRect();
+        if (rectBaixo.top <= alturaJanela - 50 && rectBaixo.bottom >= 0) {
+          terceiroCard.classList.add("animar-icone");
+          quartoCard.classList.add("animar-icone");
+          executadoBaixo = true;
+        }
+      }
+    }
+
+    // Remove o listener quando ambas as linhas forem animadas
+    if (executadoTopo && executadoBaixo) {
+      window.removeEventListener("scroll", verificarVisualizacaoCards);
     }
   }
 
-  window.addEventListener("scroll", verificarVisualizacaoTexto);
-  verificarVisualizacaoTexto(); // Checa se já está visível logo ao carregar
+  window.addEventListener("scroll", verificarVisualizacaoCards);
+  verificarVisualizacaoCards(); 
 });
 
 // ANIMAÇÃO QUEM SOMOS?
