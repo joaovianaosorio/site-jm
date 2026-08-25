@@ -225,7 +225,41 @@ function mudarCardManual(index) {
 }
 
 // ==========================================
-// 8. CARDS ANTES E DEPOIS
+// 8. SEÇÃO NOVAS TECNOLOGIAS
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const secaoTecnologias = document.querySelector("#tecnologias");
+  const containerScan = document.querySelector(".container-imagem-scan");
+  let secaoAnimada = false;
+
+  function checarScrollTecnologias() {
+    if (secaoAnimada || !secaoTecnologias) return;
+
+    const alturaJanela = window.innerHeight || document.documentElement.clientHeight;
+    const rect = secaoTecnologias.getBoundingClientRect();
+
+    // Dispara quando o topo da seção entra 100px na tela
+    if (rect.top <= alturaJanela - 100 && rect.bottom >= 0) {
+      console.log("Seção Tecnologias ativada!"); // Teste no F12 do navegador
+      
+      secaoTecnologias.classList.add("visivel");
+
+      if (containerScan) {
+        containerScan.classList.add("animar-scan");
+      }
+
+      secaoAnimada = true;
+    }
+  }
+
+  // Executa no scroll e também imediatamente no carregamento da página
+  window.addEventListener("scroll", checarScrollTecnologias);
+  checarScrollTecnologias(); 
+});
+
+// ==========================================
+// 9. CARDS ANTES E DEPOIS
 // ==========================================
 document.querySelectorAll('.card-antes-depois').forEach(card => {
   card.addEventListener('click', () => {
@@ -234,7 +268,7 @@ document.querySelectorAll('.card-antes-depois').forEach(card => {
 });
 
 // ==========================================
-// 9. SUAVIDADE DE ROLAGEM
+// 10. SUAVIDADE DE ROLAGEM
 // ==========================================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -258,7 +292,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==========================================
-// 10. ANIMAÇÕES
+// 11. ANIMAÇÕES
 // ==========================================
 
 // ANIMAÇÃO MÉTRICAS

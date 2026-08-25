@@ -225,6 +225,11 @@ section#procedimentos > .cards-procedimentos {
     height: 280px;
   }
 
+  /* Troca o texto para DESKTOP */
+  .instrucao-card::after {
+    content: "Passe o mouse para ver o resultado";
+  }
+
   .onda-animada {
   height: 180px;}
 
