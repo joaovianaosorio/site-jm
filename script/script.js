@@ -242,3 +242,81 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// ==========================================
+// 10. ANIMAÇÕES
+// ==========================================
+
+// ANIMAÇÃO MÉTRICAS
+
+// Seleciona a seção das métricas
+const secaoMetricas = document.getElementById("metricas");
+
+// Cria o observador para detectar quando você rola até a seção
+const observadorMetricas = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    // Quando a seção entra na tela
+    if (entry.isIntersecting) {
+      secaoMetricas.classList.add("animar"); // Adiciona a classe que ativa o CSS
+      observer.unobserve(entry.target);     // Para de observar para rodar só uma vez
+    }
+  });
+}, {
+  threshold: 0.3 // Dispara a animação quando 30% da faixa estiver visível
+});
+
+// Ativa a observação se o elemento existir
+if (secaoMetricas) {
+  observadorMetricas.observe(secaoMetricas);
+}
+
+// ANIMAÇÃO CARDS
+
+document.addEventListener("DOMContentLoaded", () => {
+  let executado = false;
+
+  function verificarVisualizacaoTexto() {
+    if (executado) return;
+
+    // Seleciona o elemento de texto inferior da segunda linha de cards
+    const textoReferencia = document.querySelector("#cards-baixo .quarto-card .subtitulo-card");
+    const caminhao = document.querySelector(".cards .fa-truck");
+    const estrela = document.querySelector(".cards .fa-star");
+
+    if (textoReferencia && caminhao && estrela) {
+      const rect = textoReferencia.getBoundingClientRect();
+      const alturaJanela = window.innerHeight || document.documentElement.clientHeight;
+
+      // Dispara somente quando a linha de texto entrar no campo de visão (com folga de 50px)
+      if (rect.top <= alturaJanela - 50 && rect.bottom >= 0) {
+        caminhao.classList.add("animar-icone");
+        estrela.classList.add("animar-icone");
+
+        executado = true;
+        window.removeEventListener("scroll", verificarVisualizacaoTexto);
+      }
+    }
+  }
+
+  window.addEventListener("scroll", verificarVisualizacaoTexto);
+  verificarVisualizacaoTexto(); // Checa se já está visível logo ao carregar
+});
+
+// ANIMAÇÃO QUEM SOMOS?
+
+const articleNos = document.querySelector("#nos");
+
+const observadorNos = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visivel");
+      observer.unobserve(entry.target); // Anima apenas uma vez
+    }
+  });
+}, {
+  threshold: 0.15 // Dispara quando 15% do article aparecer no scroll
+});
+
+if (articleNos) {
+  observadorNos.observe(articleNos);
+}
