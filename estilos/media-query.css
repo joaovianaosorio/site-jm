@@ -1,21 +1,43 @@
 @charset "UTF-8";
 
 /* Telas muito pequenas (ex: Galaxy S8+, iPhone SE) */
-@media (max-width: 480px) {
+@media (max-width: 375px) {
     .home{
         font-size: .85em;
     }
     .cards > .cards-topo, .cards > .cards-baixo{
         font-size: .9em;
     }
+
+    .home > .texto > .titulo{
+        padding-top: 3em;
+    }
+
     .home > .texto > .subtitulo {
         font-size: 1.1em;
     }
+
+    .home > .texto > .cta > a{
+         font-size: 1.4em;
+         padding-top: .6em;
+         margin-top: 1em;
+         margin-bottom: 5em;
+         width: 12em;
+    }
+
     .nos > h2 {
         font-size: 1.4em;
     }
     .servicos > h2 {
         font-size: 1.5em;
+    }
+
+    .servicos > .h3{
+        width: 50%;
+    }
+
+    .categoria-tabs{
+        flex-flow: row wrap;
     }
 }
 
