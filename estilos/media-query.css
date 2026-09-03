@@ -41,7 +41,7 @@
     }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1400px){
     .carrossel-wrapper button#btn-prev{
         margin-left: 2em;
     }
