@@ -1,12 +1,77 @@
 @charset "UTF-8";
 
-@media (max-width: 390px) {
-
+/* Telas muito pequenas (ex: Galaxy S8+, iPhone SE) */
+@media (max-width: 480px) {
     .home{
+        font-size: .85em;
+    }
+    .cards > .cards-topo, .cards > .cards-baixo{
         font-size: .9em;
     }
+    .home > .texto > .subtitulo {
+        font-size: 1.1em;
+    }
+    .nos > h2 {
+        font-size: 1.4em;
+    }
+    .servicos > h2 {
+        font-size: 1.5em;
+    }
+}
 
-    .cards > .cards-topo, .cards-baixo{
-        font-size: .95em;
+@media screen and (min-width: 1200px){
+    .carrossel-wrapper button#btn-prev{
+        margin-left: 2em;
+    }
+
+    .carrossel-wrapper button#btn-next{
+        margin-right: 2.5em;
+    }
+}
+
+/* EFEITOS DE HOVER - Somente para dispositivos que suportam hover (Mouses) */
+@media (hover: hover) and (pointer: fine) {
+    
+    /* Efeito do CTA Home */
+    .home > .texto > .cta > a:hover {
+        background-color: var(--cor4);
+        transform: translateY(-2px);
+    }
+
+    /* Efeito dos Cards (Serviços) */
+    .pai-cards > .cards > .cards-topo > .primeiro-card:hover,
+    .pai-cards > .cards > .cards-topo > .primeiro-card:active,
+    .pai-cards > .cards > .cards-topo > .segundo-card:hover,
+    .pai-cards > .cards > .cards-topo > .segundo-card:active,
+    .pai-cards > .cards > .cards-baixo > .terceiro-card:hover,
+    .pai-cards > .cards > .cards-baixo > .terceiro-card:active,
+    .pai-cards > .cards > .cards-baixo > .quarto-card:hover,
+    .pai-cards > .cards > .cards-baixo > .quarto-card:active {
+        transform: translateY(-5px);
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.12);
+    }
+    .pai-cards > .cards > .cards-topo > .primeiro-card:hover > i,
+    .pai-cards > .cards > .cards-topo > .segundo-card:hover > i,
+    .pai-cards > .cards > .cards-baixo > .terceiro-card:hover > i,
+    .pai-cards > .cards > .cards-baixo > .quarto-card:hover > i {
+        color: var(--cor3);
+    }
+
+    /* Novas Tecnologias - Lista Tópicos */
+    .lista-tecnologias > li {
+        transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .lista-tecnologias > li:hover,
+    .lista-tecnologias > li:active {
+        transform: translateY(-8px);
+        border-left-color: var(--cor4);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .lista-tecnologias > li:hover > i,
+    .lista-tecnologias > li:active > i {
+        color: var(--cor4); 
     }
 }

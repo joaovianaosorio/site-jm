@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html, body{
+  width: 100vw;
+}
+
 header{
     height: 3.3em;
     align-items: center;
@@ -79,6 +83,236 @@ color: var(--cor5);
 .sidebar > ul > li > a:hover::after {
     width: 100%;
 }
+
+/* SUBSTITUIR TODO O BLOCO DA HOME NO DESKTOP.CSS POR ESTE: */
+
+.home {
+  height: auto;
+  min-height: 90vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4rem 2rem 4rem 2rem; /* Mais respiro embaixo para nao sobrepor métricas */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home > .texto {
+  flex: 1 1 50%;
+  margin-left: 0;
+}
+
+.home > .texto > .titulo > h1 {
+  font-size: 2.4em;
+}
+
+.home > .texto > .subtitulo > .sub-desktop {
+  display: block;
+  font-size: .85em;
+  margin-top: 1em;
+  width: 90%;
+}
+
+.home > .texto > .subtitulo > .sub-desktop > ul {
+  color: var(--cor-subtitulo);
+  text-align: justify;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.home > .texto > .subtitulo > .sub-desktop > ul > li {
+  margin-top: .4em;
+}
+
+.home > .texto > .subtitulo > .sub-desktop > ul > li > .dest-lista {
+  font-weight: 700;
+}
+
+.home > .texto > .cta > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor6);
+  text-decoration: none;
+  background-color: var(--cor5);
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 35px;
+  width: auto;
+  max-width: 320px; /* Limite amigável para telas de notebook */
+  padding: 0 1em;
+  height: 2.8em;
+  box-shadow: 2px 2px 2px #3b3b3b82;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home > .texto > .cta > a > .fa-whatsapp {
+  font-size: 1.2em;
+  margin-left: .4em;
+}
+
+/* Redefinição da Imagem no Desktop */
+.home > .imagem {
+  flex: 1 1 45%;
+  justify-content: center;
+}
+
+.home > .imagem > picture {
+  justify-content: center;
+}
+
+.home > .imagem .fundo {
+  width: 250px;
+  height: auto;
+  padding-top: 0;
+  margin-left: 0;
+  transform: none;
+  border-radius: 10px;
+}
+
+/*   METRICAS   */
+.metricas {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: var(--cor4);
+  color: var(--cor6);
+  width: 100%;
+  height: 6em;
+  margin-top: -3.5em;
+  position: relative;
+  overflow: hidden;
+}
+
+.metricas > .casos, .metricas > .tempo, .metricas > .clinicas {
+  width: 15%;
+}
+
+.metricas > .casos{
+  margin-left: 5em;
+}
+
+.metricas > .clinicas{
+  margin-right: 5em;
+}
+
+.metricas > .clinicas > p > .nowrap-clin{
+  white-space: nowrap;
+}
+
+.metricas > .clinicas{
+  display: inline-block;
+}
+
+.metricas > div#linha2{
+  display: inline-block;
+}
+
+.metricas > .clinicas > p > .num-clinicas{
+  display: block;
+  margin: auto;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: .2em 0em;
+  opacity: 0; /* Começa invisível */
+}
+
+.metricas.animar > .clinicas > p > .num-clinicas {
+  animation: popNumero 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.pai-cards{
+  display: flex;
+  justify-content: space-between;
+  height: 85vh;
+}
+
+.pai-cards > img{
+  display: inline-block;
+}
+
+.pai-cards > .cards > .cards-topo > .primeiro-card,
+.pai-cards > .cards > .cards-topo > .segundo-card,
+.pai-cards > .cards > .cards-baixo > .terceiro-card,
+.pai-cards > .cards > .cards-baixo > .quarto-card{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 45%;
+  min-width: 400px;
+  max-width: 500px;
+  height: 10em; /* Mais espaco */
+  padding: 1.5em;
+}
+
+/* Reajustando textos e ícones dentro do card pro formato ROW */
+.pai-cards .titulo-card {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+.pai-cards .subtitulo-card {
+  font-size: 0.95em;
+}
+.pai-cards .cards-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 1.5em; /* Distância do ícone */
+}
+
+.cards > .cards-topo > .primeiro-card > .cards-info > .titulo-card,
+.cards > .cards-topo > .segundo-card > .cards-info > .titulo-card,
+.cards > .cards-baixo > .terceiro-card > .cards-info > .titulo-card,
+.cards > .cards-baixo > .quarto-card > .cards-info > .titulo-card{
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+/* Sobre nós (Quem somos) para Desktop */
+#nos .quem-somos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  max-width: 1200px;
+  margin: 2em auto;
+}
+#nos .quem-somos > img {
+  height: auto;
+  max-height: 400px;
+  border-radius: 10px;
+  flex: 0 0 45%; /* Imagem pega metade e não cresce mais */
+}
+
+#nos h2 {
+  text-align: center;
+  width: 17%;
+}
+
+#nos > h3{
+  width: 40%;
+}
+
+#nos .quem-somos > .texto-nos {
+  background-color: var(--cor6);
+  font-weight: bold;
+  text-align: justify;
+  width: 90%;
+  border: 1px solid #3b3b3b27;
+  border-radius: 10px;
+  margin-top: 1.5em;
+  padding: .6em;
+  color: var(--cor9);
+  flex: 0 0 45%;
+}
+
 
 .categoria-tabs {
     display: flex;
@@ -184,56 +418,106 @@ transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     gap: 16px;
 }
 
+/* ==========================================
+   LOGÍSTICA - DESKTOP (a partir de 768px)
+   ========================================== */
+
 .logistica-wrapper {
-    flex-direction: row; /* Coloca texto na esquerda e mapa na direita */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-  .logistica-conteudo {
-    flex: 1;
-  }
+.logistica-conteudo {
+    flex: 1 1 50%;
+    max-width: 550px;
+}
 
-  .mapa-container {
-    flex: 0 0 380px;
-    height: 380px; /* Garante a proporção perfeita do mapa satélite no desktop */
-  }
+/* Container do Mapa com proporção fixa para não desalinharem os pontos */
+.mapa-container {
+    flex: 1 1 45%;
+    max-width: 500px;  /* Ajuste este valor se quiser o mapa ainda maior */
+    height: 520px;     /* Altura proporcional para manter a forma do mapa */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Força a imagem a preencher o container mantendo o mapa centralizado */
+.mapa-satelite {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Ajuste Fino da Sede (São Paulo) para manter o ponto amarelado fixo no lugar correto */
+.ponto-sp-real {
+    top: 68%;
+    left: 63%;
+}
 
 section#procedimentos{
     background-position: center -20em;
 }
 
 section#procedimentos > .cards-procedimentos {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    gap: 3em;          /* Altere este valor para controlar a distância (ex: 10px, 15px ou 20px) */
-    max-width: 1200px;  /* Limite de largura total do grupo de cards na tela */
-    margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 3em;          /* Altere este valor para controlar a distância (ex: 10px, 15px ou 20px) */
+  max-width: 1200px;  /* Limite de largura total do grupo de cards na tela */
+  margin: 0 auto;
+}
+
+/* Tamanho de CADA card individual */
+.card-antes-depois {
+  width: 100%;
+  max-width: 380px;  /* Largura ideal de cada card no desktop (360px a 400px) */
+  height: 440px;
+}
+
+/* Imagens */
+.card-frente img, 
+.card-verso img {
+  height: 280px;
+}
+
+/* Troca o texto para DESKTOP */
+  .instrucao-card::after {
+      content: "Passe o mouse para ver o resultado";
   }
 
-  /* Tamanho de CADA card individual */
-  .card-antes-depois {
-    width: 100%;
-    max-width: 380px;  /* Largura ideal de cada card no desktop (360px a 400px) */
-    height: 440px;
-  }
+.onda-animada {
+height: 180px;}
 
-  /* Imagens */
-  .card-frente img, 
-  .card-verso img {
-    height: 280px;
-  }
+.marca{
+  display: flex;
+  flex-flow: column wrap;
+}
 
-  /* Troca o texto para DESKTOP */
-    .instrucao-card::after {
-        content: "Passe o mouse para ver o resultado";
-    }
+/* Novas Tecnologias - Imagem Direita, Texto Esquerda */
+#tecnologias .novas-tecnologias {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  max-width: 1200px;
+  margin: 0 auto 3em auto;
+}
 
-  .onda-animada {
-  height: 180px;}
+#tecnologias .novas-tecnologias .container-imagem-scan > img{
+  width: 400px;
+  height: auto;
+}
 
-  .marca{
-    display: flex;
-    flex-flow: column wrap;
-  }
+#tecnologias .texto-tec {
+  flex: 0 0 45%;
+  margin-top: 0;
+}

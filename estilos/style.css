@@ -305,6 +305,7 @@ header.menu-aberto > img#logo{
 }
 
 .home > .texto{
+    margin-left: .2em;
     flex: 1 1 55%;
     z-index: 2;
 }
@@ -313,10 +314,13 @@ header.menu-aberto > img#logo{
     text-align: left;
     font-family: var(--fonte-titulo);
     font-weight: 700;
+    font-size: 1.18em;
     letter-spacing: -0.5px; /* Deixa o título imponente e bem ajustado */
     text-transform: uppercase;
     margin-top: 1.4em;
+    margin-bottom: 1.5em;
     margin-left: .8em;
+    line-height: 2.5em;
 }
 
 .home > .texto > .titulo > h1 > .destaque{
@@ -326,9 +330,16 @@ header.menu-aberto > img#logo{
 .home > .texto > .subtitulo{
     text-align: left;
     width: 90%;
-    font-size: 1.3em;
     margin-top: 1.4em;
     margin-left: .8em;
+}
+
+.home > .texto > .subtitulo > p{
+    font-size: 1.4em;
+}
+
+.home> .texto > .subtitulo > .sub-desktop{
+  display: none;
 }
 
 .home > .texto > .cta > a{
@@ -338,6 +349,7 @@ header.menu-aberto > img#logo{
     background-color: var(--cor5);
     text-align: center;
     font-weight: bold;
+    font-size: 1.2em;
     padding-top: .7em;
     padding-bottom: .7em;
     margin-top: 2.2em;
@@ -368,19 +380,28 @@ header.menu-aberto > img#logo{
   transform: translateY(-2px);
 }
 
-.home > .imagem{
-    flex: 1 1 45%;
-    display: flex;
-    justify-content: flex-end;
+/* SUBSTITUIR ESSAS DUAS REGRAS NO STYLE.CSS: */
+
+.home > .imagem {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.home > .imagem > .fundo {
-    max-width: 240%;     /* Permite que ela se expanda levemente se necessário */
-    height: auto;        /* Mantém a proporção */
-    padding-top: 8em;
-    object-fit: contain;
-    transform: translateX(10%); /* Ajuste fino de sangria para a direita */
-  }
+/* Nova regra para o picture não quebrar a largura */
+.home > .imagem > picture {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.home > .imagem .fundo {
+  max-width: 240%;
+  height: auto;
+  padding-top: 8em;
+  object-fit: contain;
+  transform: translateX(10%);
+}
 
   /* WHATSAPP */
 
@@ -388,8 +409,8 @@ header.menu-aberto > img#logo{
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 44px;
-    height: 44px;
+    width: 55px;
+    height: 55px;
     background-color: #25d366;
     color: #ffffff;
     border-radius: 50%;
@@ -468,6 +489,14 @@ header.menu-aberto > img#logo{
     background-color: var(--cor6);
 }
 
+.metricas > .clinicas{
+  display: none;
+}
+
+.metricas > div#linha2{
+  display: none;
+}
+
 /* Números (Estado Inicial escondido) */
 .metricas > .casos > p > .num-casos,
 .metricas > .tempo > p > .tempo-anos {
@@ -514,17 +543,24 @@ header.menu-aberto > img#logo{
    SEÇÃO CARDS
    ========================================= */
 
-section#cards {
-    background-color: var(--cor6);
-    text-align: center;
+.pai-cards{
+  background-color: var(--cor6);
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  border-bottom: 1px solid #3b3b3b1f;
+  overflow: hidden;
+}
+
+.pai-cards > img{
+  display: none;
+}  
+  
+div#cards {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    border-bottom: 1px solid #3b3b3b1f;
-    overflow: hidden;
 }
 
 .cards > .cards-topo, 
@@ -553,6 +589,7 @@ section#cards {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    font-size: 1.1em;
     color: var(--cor9);
     width: 45%;
     max-width: 200px;
@@ -561,6 +598,14 @@ section#cards {
     border-radius: 10px;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards > .cards-topo > .primeiro-card > .cards-info > .titulo-card,
+.cards > .cards-topo > .segundo-card > .cards-info > .titulo-card,
+.cards > .cards-baixo > .terceiro-card > .cards-info > .titulo-card,
+.cards > .cards-baixo > .quarto-card > .cards-info > .titulo-card{
+  margin-top: -8em;
+  margin-bottom: 1em;
 }
 
 /* Efeito Hover nos Cards */
@@ -737,6 +782,21 @@ article#nos{
 
 .nos > h2 > .somos{
     color: var(--cor5);
+}
+
+.nos > h3{
+  text-align: center;
+  color: var(--cor-subtitulo2);
+  background-color: var(--cor6);
+  width: 90vw;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-right: auto;
+  margin-bottom: 25px;
+  margin-left: auto;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 /*
@@ -1210,21 +1270,9 @@ article#nos{
   max-width: 380px;
   height: 320px;
   position: relative;
-  background: #ffffff;
+  background: transparent;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.mapa-container {
-  width: 100%;
-  max-width: 380px;
-  height: 380px;
-  position: relative;
-  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
