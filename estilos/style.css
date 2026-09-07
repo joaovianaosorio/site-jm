@@ -28,6 +28,7 @@
     --cor-borda: #3b3b3b1f;
     --cor-subtitulo: #171717af;
     --cor-subtitulo2: #777777;
+    --cor-subtitulo-home: #313131;
 
     --fonte-padrao: 'Inter', sans-serif;  
     --fonte-titulo: 'Montserrat', sans-serif;
@@ -747,7 +748,7 @@ div#cards {
 
 article#nos{
     background-color: var(--cor6);
-    background-image: url('../imagens/fundo-nos.png');
+    background-image: url('../imagens/fundos/fundo-nos.png');
     background-position: -.5em;
     padding-top: 3em;
     text-align: center;
@@ -821,8 +822,16 @@ article#nos{
 }
 
 .nos > .quem-somos > img{
-    height: 200px;
+    height: 280px;
     width: auto;
+}
+
+.nos > .quem-somos> div#desktop{
+  display: none;
+}
+
+.nos > .quem-somos > div#mobile{
+  display: block;
 }
 
 .nos > .quem-somos> .texto-nos{
@@ -972,7 +981,7 @@ article#nos{
 
 .trabalho-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;    /* Mantém a proporção da foto sem distorcer */
   object-position: center; /* Centraliza a imagem na horizontal e vertical */
   border-radius: 10px;
@@ -1598,7 +1607,8 @@ section#tecnologias.visivel {
 /*    PROCEDIMENTOS     */
 
 section#procedimentos{
-    background-image: url('../imagens/fundo-nos.png');
+    background-image: url('../imagens/fundos/fundo-nos.png');
+    background-color: var(--cor6);
     background-position: center -8.5em;
     background-repeat: repeat; /* Permite que a estampa se repita suavemente */
     text-align: center;

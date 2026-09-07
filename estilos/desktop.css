@@ -107,13 +107,13 @@ color: var(--cor5);
 
 .home > .texto > .subtitulo > .sub-desktop {
   display: block;
-  font-size: .85em;
+  font-size: .88em;
   margin-top: 1em;
   width: 90%;
 }
 
 .home > .texto > .subtitulo > .sub-desktop > ul {
-  color: var(--cor-subtitulo);
+  color: var(--cor-subtitulo-home);
   text-align: justify;
   list-style-type: none;
   padding-left: 0;
@@ -165,7 +165,7 @@ color: var(--cor5);
 .home > .imagem .fundo {
   width: 250px;
   height: auto;
-  padding-top: 0;
+  margin-top: -10em;
   margin-left: 0;
   transform: none;
   border-radius: 10px;
@@ -233,6 +233,9 @@ color: var(--cor5);
 
 .pai-cards > img{
   display: inline-block;
+  height: 250px;
+  width: auto;
+  margin-top: 4em;
 }
 
 .pai-cards > .cards > .cards-topo > .primeiro-card,
@@ -242,8 +245,7 @@ color: var(--cor5);
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  width: 45%;
-  min-width: 400px;
+  min-width: 300px;
   max-width: 500px;
   height: 10em; /* Mais espaco */
   padding: 1.5em;
@@ -284,9 +286,10 @@ color: var(--cor5);
   max-width: 1200px;
   margin: 2em auto;
 }
+
 #nos .quem-somos > img {
   height: auto;
-  max-height: 400px;
+  width: 100px;
   border-radius: 10px;
   flex: 0 0 45%; /* Imagem pega metade e não cresce mais */
 }
@@ -300,6 +303,14 @@ color: var(--cor5);
   width: 40%;
 }
 
+.nos > .quem-somos> div#desktop{
+  display: block;
+}
+
+.nos > .quem-somos> div#mobile{
+  display: none;
+}
+
 #nos .quem-somos > .texto-nos {
   background-color: var(--cor6);
   font-weight: bold;
@@ -311,6 +322,10 @@ color: var(--cor5);
   padding: .6em;
   color: var(--cor9);
   flex: 0 0 45%;
+}
+
+#nos .quem-somos > .texto-nos > p{
+  margin-top: .5em;
 }
 
 
@@ -505,16 +520,20 @@ height: 180px;}
 #tecnologias .novas-tecnologias {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 4em;
+  gap: 2em;
   max-width: 1200px;
-  margin: 0 auto 3em auto;
+  margin: 3em auto 3em auto;
+}
+
+#tecnologias .novas-tecnologias .container-imagem-scan{
+  height: 400px;
 }
 
 #tecnologias .novas-tecnologias .container-imagem-scan > img{
   width: 400px;
-  height: auto;
+  height: 400px;
 }
 
 #tecnologias .texto-tec {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imagens/logos/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/desktop.css" media="screen and (min-width: 768px)">
     <link rel="stylesheet" href="estilos/media-query.css">
@@ -19,7 +19,7 @@
 
     </html>
     <header>
-        <img src="imagens/logo-vetorizada.png" alt="Logo JM" id="logo">
+        <img src="imagens/logos/logo-vetorizada.png" alt="Logo JM" id="logo">
         <button id="menu-btn" class="menu-btn" aria-label="Abrir Menu">
             <span id="burger" class="material-symbols-outlined">menu</span>
         </button>
@@ -95,7 +95,7 @@
             <div id="imagem" class="imagem">
                 <picture>
                     <source media="(min-width: 768px)" srcset="imagens/fazendo-protese.jpg" type="image/jpg">
-                    <img src="imagens/fundo-home.png" alt="Prótese Dentária JM" class="fundo">
+                    <img src="imagens/fundos/fundo-home.png" alt="Prótese Dentária JM" class="fundo">
                 </picture>
             </div>
         </section>
@@ -118,7 +118,7 @@
             </div>
         </section>
         <section class="pai-cards secao-escura">
-            <img src="imagens/fundo-home.png" alt="Protese Dentária JM">
+            <img src="imagens/fundos/fundo-cards.png" alt="Protese Dentária JM">
             <div id="cards" class="cards">
                 <div id="cards-topo" class="cards-topo">
                     <div class="primeiro-card">
@@ -158,10 +158,16 @@
             <h2>Quem <span class="somos">somos?</span></h2>
             <h3>Laboratório especializado em próteses com padrão de excelência.</h3>
             <div class="quem-somos">
-                <img src="imagens/protetico.jpg" alt="quem-somos">
-                <div class="texto-nos">
+                <img src="imagens/quem-somos.webp" alt="quem-somos">
+                <div id="mobile" class="texto-nos">
                     <h3>JM Soluções Protéticas, <span class="slogan">o sorriso dos seus pacientes é aqui!</span></h3>
-                    <p>Na JM Soluções Protéticas, entendemos que cada trabalho recebido representa uma história de transformação. Há mais de 8 anos, atuamos como uma extensão do consultório do cirurgião-dentista, oferecendo próteses dentárias com máxima precisão de adaptação, anatomia natural e estética refinada. Combinamos pontualidade na entrega, comunicação direta e rigor técnico em cada etapa do processo — do modelo físico ao fluxo digital. Nosso compromisso é garantir que o seu paciente saia da cadeira com um sorriso impecável e a segurança de um resultado duradouro.</p>
+                    <p>Na JM Soluções Protéticas, entendemos que cada trabalho recebido representa uma história de transformação. Há mais de 10 anos, atuamos como uma extensão do consultório do cirurgião-dentista, oferecendo próteses dentárias com máxima precisão de adaptação, anatomia natural e estética refinada. Combinamos pontualidade na entrega, comunicação direta e rigor técnico em cada etapa do processo — do modelo físico ao fluxo digital. Nosso compromisso é garantir que o seu paciente saia da cadeira com um sorriso impecável e a segurança de um resultado duradouro.</p>
+                </div>
+                <div id="desktop" class="texto-nos">
+                    <h3>JM Soluções Protéticas, <span class="slogan">o sorriso dos seus pacientes é aqui!</span></h3>
+                    <p>Na JM Soluções Protéticas, entendemos que cada trabalho que chega ao nosso laboratório representa uma história de transformação e a busca pela devolução da autoestima. Há mais de 8 anos, atuamos como uma verdadeira extensão do consultório do cirurgião-dentista, oferecendo próteses dentárias desenvolvidas com máxima precisão de adaptação, anatomia natural e estética refinada.</p>
+                    <p>Nossa filosofia de trabalho une artesania de alto padrão e tecnologia de ponta, permitindo entregar peças com acabamento impecável e mínimo ajuste oclusal na cadeira. Combinamos rigor técnico em cada etapa do processo — do modelo físico ao fluxo 100% digital —, garantindo a agilidade e a previsibilidade que a sua rotina clínica exige.</p>
+                    <p>Mais do que confeccionar próteses, prezamos por uma parceria sólida baseada na comunicação direta com o protesista, pontualidade rigorosa nas entregas e uso exclusivo de matérias-primas certificadas. Nosso compromisso é assegurar que seu paciente saia do consultório com um sorriso natural, funcional e duradouro.</p>
                 </div>
             </div>
         </article>
@@ -183,61 +189,132 @@
 
                 <!-- O Container dos Cards -->
                 <div class="trabalhos-carrossel" id="carrossel">
-                    <!-- Card 1 -->
-                    <div class="trabalho-card" data-categoria="principais removivel">
-                        <div class="card-imagem-conteiner">
-                            <img src="imagens/proteses/armacao.jpg" alt="Armação P.P.R">
-                        </div>
-                        <h3>Armação P.P.R</h3>
-                        <p>Confeccionada em ligas de alta resistência, garantindo encaixe perfeito, estabilidade e
-                            conforto ao paciente.</p>
-                    </div>
+                    <!-- PRINCIPAIS -->
 
-                    <!-- Card 2 -->
-                    <div class="trabalho-card" data-categoria="principais removivel">
-                        <div class="card-imagem-conteiner">
-                            <img src="imagens/proteses/injeção-de-flex-4.jpg" alt="Injeção de Flex">
-                        </div>
-                        <h3>Injeção de Flex</h3>
-                        <p>Solução flexível, leve e imperceptível, unindo máxima estética e resistência para o dia a
-                            dia.</p>
-                    </div>
-
-                    <!-- Card 3 -->
                     <div class="trabalho-card" data-categoria="principais fixa">
                         <div class="card-imagem-conteiner">
-                            <img src="imagens/proteses/coroa-emax.jpg" alt="Coroa Emax">
+                            <img src="imagens/proteses/zirconia.webp" alt="Zircônia">
                         </div>
-                        <h3>Coroa E-max</h3>
-                        <p>Restauração puramente cerâmica com excelente resistência mecânica, tonalidade fiel e encaixe
-                            de alta precisão.</p>
+                        <h3>Zircônia</h3>
+                        <p>Estrutura livre de metal com máxima resistência mecânica, aliando excelente translucidez e adaptação precisa para resultados estéticos de alto padrão.</p>
                     </div>
 
-                    <!-- Card 4 -->
+                    <div class="trabalho-card" data-categoria="principais removivel">
+                        <div class="card-imagem-conteiner">
+                            <img src="imagens/proteses/injeção-copia.webp" alt="Injeção de Flex">
+                        </div>
+                        <h3>Injeção de Flex</h3>
+                        <p>Solução flexível, leve e imperceptível, unindo máxima estética e resistência para o dia a dia.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="principais removivel">
+                        <div class="card-imagem-conteiner">
+                            <img src="imagens/proteses/armacao-copia.webp" alt="Armação P.P.R">
+                        </div>
+                        <h3>Armação P.P.R</h3>
+                        <p>Confeccionada em ligas de alta resistência, garantindo encaixe perfeito, estabilidade e conforto ao paciente.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="principais fixa">
+                        <div class="card-imagem-conteiner">
+                            <img src="imagens/proteses/coroa-emax-copia.webp" alt="Coroa Emax">
+                        </div>
+                        <h3>Coroa E-max</h3>
+                        <p>Restauração puramente cerâmica com excelente resistência mecânica, tonalidade fiel e encaixede alta precisão.</p>
+                    </div>
+
                     <div class="trabalho-card" data-categoria="principais orto">
                         <div class="card-imagem-conteiner">
-                            <img src="imagens/proteses/bruxismo-2.jpg" alt="Placa de Bruxismo">
+                            <img src="imagens/proteses/bruxismo-copia.webp" alt="Placa de Bruxismo">
                         </div>
                         <h3>Placa de Bruxismo</h3>
                         <p>Alta precisão para proteção oclusal e alívio de tensões, garantindo perfeito ajuste, conforto e durabilidade.</p>
                     </div>
 
-                    <!-- Card 5 -->
-                    <div class="trabalho-card">
-                        <img src="protese-1.jpg" alt="Protocolo sobre Implante">
-                        <h3>Protocolo em Zircônia</h3>
-                        <p>Estrutura 100% digital com alta resistência, naturalidade e acabamento artesanal refinado.
-                        </p>
+                    <div class="trabalho-card" data-categoria="principais fixa">
+                        <img src="imagens/proteses/coroa-metaloceramica-copia.webp" alt="Coroa Metalocerâmica">
+                        <h3>Coroa Metalocerâmica</h3>
+                        <p>Infraestrutura metálica com cobertura cerâmica de alta fidelidade, garantindo resistência mastigatória e estética natural.</p>
                     </div>
 
-                    <!-- Card 6  -->
-                    <div class="trabalho-card">
-                        <img src="protese-2.jpg" alt="Lentes de Contato Odontológicas">
-                        <h3>Lentes de Contato</h3>
-                        <p>Lâminas ultra-finas em cerâmica pura para transformação estética com mínima invasão.</p>
+                    <div class="trabalho-card" data-categoria="principais orto">
+                        <img src="imagens/proteses/hawley-copia.webp" alt="Placa de Hawley">
+                        <h3>Placa de Hawley</h3>
+                        <p>Contenção ortodôntica em acrílico e arco metálico ajustado, garantindo a perfeita estabilização pós-tratamento.</p>
                     </div>
 
-                    <!-- Card 3 -->
+                    <!-- FIXA  -->
+
+                    <div class="trabalho-card" data-categoria="fixa">
+                        <img src="imagens/proteses/coroa-implante-copia.webp" alt="Coroa Metalocerâmica sobre Implante">
+                        <h3>Coroa Metalocerâmica sobre Implante</h3>
+                        <p>Solução resistente sobre implante, combinando infraestrutura metálica precisa e cobertura cerâmica estratificada.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="fixa">
+                        <img src="imagens/proteses/artglass-copia.webp" alt="Jaqueta Art-Glass">
+                        <h3>Jaqueta Art-Glass</h3>
+                        <p>Restauração em cerômero de alta tecnologia, oferecendo absorção de cargas com excelente polimento e estética.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="fixa">
+                        <img src="imagens/proteses/protocolo-copia.webp" alt="Protocolo">
+                        <h3>Protocolo</h3>
+                        <p>Reabilitação total fixa sobre implantes, unindo estrutura resistente e caracterização gengival para estética e função.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="fixa">
+                        <img src="imagens/proteses/barra-copia.webp" alt="Barra Fixa">
+                        <h3>Barra Fixa</h3>
+                        <p>Infraestrutura metálica sob medida para suporte sobre implantes, oferecendo rigidez e distribuição ideal de forças.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="fixa">
+                        <img src="imagens/proteses/nucleo-copia.webp" alt="Núcleo">
+                        <h3>Núcleo Metálico (Ni-Cr)</h3>
+                        <p>Retentor intrarradicular fundido em liga de alta dureza, proporcionando ancoragem segura e adaptação marginal exata.</p>
+                    </div>
+
+                    <!-- REMOVÍVEL -->
+
+                    <div class="trabalho-card" data-categoria="removivel">
+                        <img src="imagens/proteses/pt-copia.webp" alt="Acrilização Incolor">
+                        <h3>Acrilização Incolor</h3>
+                        <p>Finalização em resina acrílica transparente, garantindo higienização facilitada, alta resistência e acabamento discreto.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="removivel">
+                        <img src="imagens/proteses/parcial-provisoria-copia.webp" alt="Parcial Provisória">
+                        <h3>Parcial Provisória</h3>
+                        <p>Solução imediata em resina para manutenção do espaço, estética e conforto do paciente durante o tratamento.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="removivel">
+                        <img src="imagens/proteses/montagem-copia.webp" alt="Montagem de Dentes">
+                        <h3>Montagem de Dentes</h3>
+                        <p>Posicionamento anatômico dos dentes no plano oclusal, garantindo alinhamento estético e engrenagem funcional.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="removivel">
+                        <img src="imagens/proteses/base-copia.webp" alt="Base de Prova">
+                        <h3>Base de Prova</h3>
+                        <p>Estrutura para registro de mordida e plano de orientação, etapa essencial para assegurar a precisão da prótese.</p>
+                    </div>
+
+                    <div class="trabalho-card" data-categoria="removivel">
+                        <img src="imagens/proteses/ppr-acetil-copia.webp" alt="P.P.R. Acétil">
+                        <h3>Armação PPR Acetec</h3>
+                        <p>Estrutura em resina acetálica com grampos na cor do dente, proporcionando fixação discreta, estética e confortável.</p>
+                    </div>
+
+                    <!-- ORTO -->
+
+                    <div class="trabalho-card" data-categoria="orto">
+                        <img src="imagens/proteses/placa-de-ronco-copia.webp" alt="Placa de Ronco">
+                        <h3>Placa de Ronco</h3>
+                        <p>Dispositivo intraoral para reposicionamento mandibular leve, mantendo as vias aéreas livres para um sono tranquilo.</p>
+                    </div>
+
                 </div>
 
                 <!-- Botão Direito -->
@@ -436,7 +513,7 @@
                         <!-- FRENTE (antes) -->
                         <div class="card-frente">
                             <span class="tag-status tag-antes">Antes</span>
-                            <img src="imagens/procedimentos/trabalho-fernanda-inicial.PNG" alt="Caso clínico - Antes">
+                            <img src="imagens/procedimentos/trabalho-sthanke-incial.jpeg" alt="Caso clínico - Antes">
                             <div class="card-info">
                                 <h3>Reabilitação Oral</h3>
                                 <!-- Trocado <p> por <span> limpo com ícone -->
@@ -446,10 +523,10 @@
                         <!-- Verso (Depois) -->
                         <div class="card-verso">
                             <span class="tag-status tag-depois">Depois</span>
-                            <img src="imagens/procedimentos/trabalho-fernanda-final.PNG" alt="Caso clínico - Depois">
+                            <img src="imagens/procedimentos/trabalho-sthanke-final.jpeg" alt="Caso clínico - Depois">
                             <div class="card-info">
-                                <h3>Adaptação & Estética</h3>
-                                <p>Prótese em Zircônia com acabamento artesanal</p>
+                                <h3>Saúde & Autoestima</h3>
+                                <p>Prótese provisória imediata para reabilitação em protocolo tardio.</p>
                             </div>
                         </div>
                     </div>
@@ -460,7 +537,7 @@
                         <!-- FRENTE (antes) -->
                         <div class="card-frente">
                             <span class="tag-status tag-antes">Antes</span>
-                            <img src="imagens/procedimentos/trabalho-fernanda-inicial.PNG" alt="Caso clínico - Antes">
+                            <img src="imagens/procedimentos/trabalho-amici-inicial.png" alt="Caso clínico - Antes">
                             <div class="card-info">
                                 <h3>Reabilitação Oral</h3>
                                 <!-- Trocado <p> por <span> limpo com ícone -->
@@ -470,10 +547,10 @@
                         <!-- Verso (Depois) -->
                         <div class="card-verso">
                             <span class="tag-status tag-depois">Depois</span>
-                            <img src="imagens/procedimentos/trabalho-fernanda-final.PNG" alt="Caso clínico - Depois">
+                            <img src="imagens/procedimentos/trabalho-amici-final.png" alt="Caso clínico - Depois">
                             <div class="card-info">
-                                <h3>Adaptação & Estética</h3>
-                                <p>Prótese em Zircônia com acabamento artesanal</p>
+                                <h3>Harmonia & Função</h3>
+                                <p>Reabilitação estética anterior com prótese fixa de alta naturalidade.</p>
                             </div>
                         </div>
                     </div>
@@ -613,7 +690,7 @@
 
                                 <div class="post-item">
                                     <!-- Substitua pela imagem do seu trabalho -->
-                                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&q=80"
+                                    <img src="imagens/instagram/fundo.png"
                                         alt="Caso de Reabilitação Oral">
                                     <div class="post-legenda">
                                         <strong>@seu.laboratorio</strong> Adaptação marginal e estratificação impecável
@@ -622,8 +699,7 @@
                                 </div>
 
                                 <div class="post-item">
-                                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=400&q=80"
-                                        alt="Fluxo Digital CAD/CAM">
+                                    <img src="imagens/instagram/apresentacao.png">
                                     <div class="post-legenda">
                                         <strong>@seu.laboratorio</strong> Usinagem de alta precisão via fluxo 100%
                                         digital.
@@ -631,8 +707,7 @@
                                 </div>
 
                                 <div class="post-item">
-                                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=400&q=80"
-                                        alt="Laminados Cerâmicos">
+                                    <img src="imagens/instagram/neymar.JPG">
                                     <div class="post-legenda">
                                         <strong>@seu.laboratorio</strong> Lentes de contato dental em dissilicato de
                                         lítio.
@@ -640,7 +715,7 @@
                                 </div>
 
                                 <div class="post-item">
-                                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80"
+                                    <img src="imagens/instagram/post-quem-somos.png"
                                         alt="Bastidores do Laboratório">
                                     <div class="post-legenda">
                                         <strong>@seu.laboratorio</strong> Controle de qualidade em cada detalhe
@@ -663,7 +738,7 @@
             <!-- Coluna 1: Marca & Apresentação -->
             <div class="rodape-coluna marca">
                 <!-- Troque pela URL da sua logo em tamanho compacto -->
-                <img src="imagens/logo-fundo-branco.jpg" alt="Logo Laboratório" class="rodape-logo">
+                <img src="imagens/logos/logo-fundo-branco.jpg" alt="Logo Laboratório" class="rodape-logo">
                 <p class="rodape-descricao">
                     Precisão artesanal e tecnologia digital na confecção de próteses de alta exigência estética.
                 </p>
