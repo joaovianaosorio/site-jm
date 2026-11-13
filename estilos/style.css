@@ -321,7 +321,7 @@ header.menu-aberto > img#logo{
     margin-top: 1.4em;
     margin-bottom: 1.5em;
     margin-left: .8em;
-    line-height: 2.5em;
+    line-height: 2.3em;
 }
 
 .home > .texto > .titulo > h1 > .destaque{
@@ -590,13 +590,16 @@ div#cards {
 .cards > .cards-baixo > .quarto-card {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     font-size: 1.1em;
     color: var(--cor9);
-    width: 45%;
+    width: 46%;
     max-width: 200px;
-    height: 15em;
-    padding: .7em;
+    height: 16.2em;
+    padding-top: 1.3em;
+    padding-right: .5em;
+    padding-bottom: .7em;
+    padding-left: .5em;
     border-radius: 10px;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -621,6 +624,7 @@ div#cards {
 .cards > .cards-baixo > .quarto-card:active {
     transform: translateY(-5px);
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Textos dentro dos Cards */
@@ -1231,6 +1235,7 @@ article#nos{
 
 .rota-card:hover {
   transform: translateY(-2px);
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .rota-icone {
@@ -1602,6 +1607,22 @@ section#tecnologias.visivel {
 
 .lista-tecnologias > li p .quebra{
   white-space: nowrap;
+}
+
+.lista-tecnologias > li {
+        transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    }
+    
+.lista-tecnologias > li:hover,
+.lista-tecnologias > li:active {
+    transform: translateY(-8px);
+    border-left-color: var(--cor4);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+    
+.lista-tecnologias > li:hover > i,
+.lista-tecnologias > li:active > i {
+    color: var(--cor4); 
 }
 
 /*    PROCEDIMENTOS     */
